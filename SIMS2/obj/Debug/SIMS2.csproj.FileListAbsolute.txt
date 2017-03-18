@@ -9,3 +9,6 @@ C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.p
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.csprojResolveAssemblyReference.cache
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.RegisterNewStudentForm.resources
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.Staff_Form.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.loginFrom.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.ViewInstructorInfo.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.ViewStudentInfo.resources

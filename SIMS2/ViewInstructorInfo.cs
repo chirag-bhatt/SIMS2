@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace SIMS2
 {
-    public partial class Form1 : Form
+    public partial class ViewInstructorInfo : Form
     {
- 
-        public Form1()
+        public ViewInstructorInfo()
         {
             InitializeComponent();
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
