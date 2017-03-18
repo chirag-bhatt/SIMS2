@@ -1,0 +1,11 @@
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\SIMS2.exe.config
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\SIMS2.exe
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\SIMS2.pdb
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.Form1.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.Properties.Resources.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.csproj.GenerateResource.Cache
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.exe
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.pdb
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.csprojResolveAssemblyReference.cache
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.RegisterNewStudentForm.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.Staff_Form.resources
