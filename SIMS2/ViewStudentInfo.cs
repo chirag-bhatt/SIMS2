@@ -21,5 +21,10 @@ namespace SIMS2
         {
            
         }
+
+        private void lbl_email_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

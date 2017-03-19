@@ -30,7 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tb_PhoneNumber = new System.Windows.Forms.TextBox();
@@ -53,40 +53,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.lbl_Credit = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbl_Credit = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -95,7 +81,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(2, 2);
             this.tabControl1.Name = "tabControl1";
@@ -115,23 +100,36 @@
             this.tabPage1.Text = "Personal Info";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // groupBox2
             // 
-            this.tabPage2.Controls.Add(this.textBox12);
-            this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.textBox11);
-            this.tabPage2.Controls.Add(this.label20);
-            this.tabPage2.Controls.Add(this.textBox5);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(752, 372);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "previous Academic Info";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.tb_PhoneNumber);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.tb_PassportNo);
+            this.groupBox2.Controls.Add(this.tb_NationalId);
+            this.groupBox2.Controls.Add(this.tb_Email);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Location = new System.Drawing.Point(2, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(347, 340);
+            this.groupBox2.TabIndex = 37;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Personal Info";
             // 
             // label13
             // 
@@ -240,7 +238,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(115, 9);
+            this.textBox3.Location = new System.Drawing.Point(115, 11);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(178, 20);
             this.textBox3.TabIndex = 40;
@@ -316,37 +314,6 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "National ID No";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.tb_PhoneNumber);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.tb_PassportNo);
-            this.groupBox2.Controls.Add(this.tb_NationalId);
-            this.groupBox2.Controls.Add(this.tb_Email);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(2, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(347, 340);
-            this.groupBox2.TabIndex = 37;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Personal Info";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox1);
@@ -367,7 +334,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.comboBox5);
             this.tabPage3.Controls.Add(this.comboBox4);
             this.tabPage3.Controls.Add(this.label25);
             this.tabPage3.Controls.Add(this.label24);
@@ -383,9 +349,6 @@
             this.tabPage3.Controls.Add(this.comboBox3);
             this.tabPage3.Controls.Add(this.label17);
             this.tabPage3.Controls.Add(this.label16);
-            this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(752, 372);
@@ -393,224 +356,6 @@
             this.tabPage3.Text = "Registeration Info";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "High School Type";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(138, 18);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(154, 20);
-            this.textBox4.TabIndex = 1;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(138, 44);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(154, 20);
-            this.textBox5.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 47);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Grade / level";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(145, 20);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(172, 20);
-            this.textBox6.TabIndex = 3;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(19, 23);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(55, 13);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Username";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(19, 103);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 13);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "Start Term";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(19, 75);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(29, 13);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "Year";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(19, 49);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(62, 13);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "Department";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(145, 45);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(172, 21);
-            this.comboBox3.TabIndex = 9;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(19, 148);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(51, 13);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "Courses :";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(145, 143);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(68, 17);
-            this.radioButton1.TabIndex = 15;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Standard";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(296, 144);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(60, 17);
-            this.radioButton2.TabIndex = 16;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Manual";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(145, 177);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(310, 139);
-            this.checkedListBox1.TabIndex = 17;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(490, 177);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(67, 13);
-            this.label19.TabIndex = 18;
-            this.label19.Text = "Total Credit :";
-            // 
-            // lbl_Credit
-            // 
-            this.lbl_Credit.AutoSize = true;
-            this.lbl_Credit.Location = new System.Drawing.Point(582, 177);
-            this.lbl_Credit.Name = "lbl_Credit";
-            this.lbl_Credit.Size = new System.Drawing.Size(167, 13);
-            this.lbl_Credit.TabIndex = 19;
-            this.lbl_Credit.Text = "Display number of total credit here";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(587, 327);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(138, 93);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(154, 20);
-            this.textBox11.TabIndex = 5;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 96);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(105, 13);
-            this.label20.TabIndex = 4;
-            this.label20.Text = "Language Certificate";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(138, 129);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(154, 20);
-            this.textBox12.TabIndex = 7;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(6, 132);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(69, 13);
-            this.label21.TabIndex = 6;
-            this.label21.Text = "Grade / level";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(490, 205);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(80, 13);
-            this.label22.TabIndex = 21;
-            this.label22.Text = "Availble Credit :";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(490, 235);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(85, 13);
-            this.label23.TabIndex = 22;
-            this.label23.Text = "Maximun Credit :";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(584, 235);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(120, 13);
-            this.label24.TabIndex = 23;
-            this.label24.Text = "display Maximun Credit :";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(584, 205);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(107, 13);
-            this.label25.TabIndex = 24;
-            this.label25.Text = "display av credit here";
             // 
             // comboBox4
             // 
@@ -627,20 +372,133 @@
             this.comboBox4.Size = new System.Drawing.Size(172, 21);
             this.comboBox4.TabIndex = 25;
             // 
-            // comboBox5
+            // label25
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.comboBox5.Location = new System.Drawing.Point(145, 100);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(172, 21);
-            this.comboBox5.TabIndex = 26;
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(584, 205);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(107, 13);
+            this.label25.TabIndex = 24;
+            this.label25.Text = "display av credit here";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(584, 235);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(120, 13);
+            this.label24.TabIndex = 23;
+            this.label24.Text = "display Maximun Credit :";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(490, 235);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(85, 13);
+            this.label23.TabIndex = 22;
+            this.label23.Text = "Maximun Credit :";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(490, 205);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(80, 13);
+            this.label22.TabIndex = 21;
+            this.label22.Text = "Availble Credit :";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(587, 327);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Register";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Credit
+            // 
+            this.lbl_Credit.AutoSize = true;
+            this.lbl_Credit.Location = new System.Drawing.Point(582, 177);
+            this.lbl_Credit.Name = "lbl_Credit";
+            this.lbl_Credit.Size = new System.Drawing.Size(167, 13);
+            this.lbl_Credit.TabIndex = 19;
+            this.lbl_Credit.Text = "Display number of total credit here";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(490, 177);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(67, 13);
+            this.label19.TabIndex = 18;
+            this.label19.Text = "Total Credit :";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(145, 177);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(310, 139);
+            this.checkedListBox1.TabIndex = 17;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(296, 144);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(60, 17);
+            this.radioButton2.TabIndex = 16;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Manual";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(145, 143);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(68, 17);
+            this.radioButton1.TabIndex = 15;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Standard";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(19, 148);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(51, 13);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Courses :";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(145, 45);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(172, 21);
+            this.comboBox3.TabIndex = 9;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(19, 49);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(62, 13);
+            this.label17.TabIndex = 8;
+            this.label17.Text = "Department";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(19, 75);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(29, 13);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Year";
             // 
             // RegisterNewStudentForm
             // 
@@ -652,8 +510,6 @@
             this.Text = "RegisterNewStudentForm";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -668,7 +524,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -695,10 +550,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -707,16 +558,8 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbl_Credit;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;

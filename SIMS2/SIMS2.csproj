@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewInstructor.Designer.cs">
+      <DependentUpon>AddNewInstructor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Countries.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -106,6 +112,9 @@
     <Compile Include="ViewStudentInfo.Designer.cs">
       <DependentUpon>ViewStudentInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNewInstructor.resx">
+      <DependentUpon>AddNewInstructor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
