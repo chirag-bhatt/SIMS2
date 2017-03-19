@@ -12,3 +12,6 @@ C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.S
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.loginFrom.resources
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.ViewInstructorInfo.resources
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.ViewStudentInfo.resources
+C:\Users\amro\Desktop\C# project\SIMS2\SIMS2\bin\Debug\SIMS2.exe.config
+C:\Users\amro\Desktop\C# project\SIMS2\SIMS2\obj\Debug\SIMS2.exe
+C:\Users\amro\Desktop\C# project\SIMS2\SIMS2\obj\Debug\SIMS2.pdb
