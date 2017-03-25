@@ -1,0 +1,48 @@
+create table student(
+studentId number(7) primary key,
+fname varchar2(20) NOT NULL,
+lname varchar2(20) NOT NULL,
+fatherName varchar2(20),
+bday date NOT NULL,
+gender varchar2(20)NOT NULL,
+registerationDate date,
+nationality varchar2(20)NOT NULL,
+nationalId number(12),
+passport varchar2(12),
+adress varchar2(100),
+email varchar2(20) NOT NULL,
+phonenum varchar2(12));
+
+create table inst(
+instId number(7) primary key,
+fname varchar2(20) NOT NULL,
+lname varchar2(20) NOT NULL,
+gender varchar2(20) NOT NULL,
+nationality varchar2(20) NOT NULL,
+nationalId number(7),
+email varchar2(20) NOT NULL,
+phonenum number(10));
+
+create table department(
+deptId number(2) primary key,
+dname varchar(20));
+
+create table course(
+courseId varchar(7) primary key,
+cname varchar(20),
+credits number (1) NOT NULL);
+
+create table Student_dept(
+ studentId number(7) references student(studentId),
+ deptId number(2) references dept(deptId));
+ 
+ create table Student_Course(
+ studentId number(7) references student(studentId),
+ courseId varchar(7) references course(courseId),
+ status varchar2 NOT NULL,
+ grade varchar2);
+
+ 
+ create table inst_Course(
+ instId number(7) references inst(instId),
+ courseId varchar(7) references course(courseId));
