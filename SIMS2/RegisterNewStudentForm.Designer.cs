@@ -35,8 +35,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tb_PhoneNumber = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -106,8 +104,6 @@
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.tb_PhoneNumber);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBox7);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
@@ -167,22 +163,6 @@
             this.label10.Size = new System.Drawing.Size(78, 13);
             this.label10.TabIndex = 50;
             this.label10.Text = "Phone Number";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(115, 84);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(178, 20);
-            this.textBox8.TabIndex = 49;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
-            this.label4.TabIndex = 48;
-            this.label4.Text = "Mother\'s Name";
             // 
             // textBox7
             // 
@@ -265,9 +245,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(11, 145);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.Size = new System.Drawing.Size(49, 13);
             this.label8.TabIndex = 23;
-            this.label8.Text = "Birthday";
+            this.label8.Text = "Birthdate";
             // 
             // label11
             // 
@@ -529,8 +509,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox tb_PhoneNumber;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
