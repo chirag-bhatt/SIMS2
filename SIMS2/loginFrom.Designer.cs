@@ -37,6 +37,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dg = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -120,11 +122,21 @@
             this.listBox1.Size = new System.Drawing.Size(232, 147);
             this.listBox1.TabIndex = 8;
             // 
+            // dg
+            // 
+            this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg.Location = new System.Drawing.Point(286, 183);
+            this.dg.Name = "dg";
+            this.dg.Size = new System.Drawing.Size(240, 150);
+            this.dg.TabIndex = 9;
+            this.dg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridtest_CellContentClick);
+            // 
             // loginFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 261);
+            this.ClientSize = new System.Drawing.Size(571, 364);
+            this.Controls.Add(this.dg);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
@@ -137,6 +149,7 @@
             this.Name = "loginFrom";
             this.Text = "loginFrom";
             this.Load += new System.EventHandler(this.loginFrom_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +166,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.DataGridView dg;
     }
 }
