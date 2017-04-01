@@ -17,35 +17,38 @@ namespace SIMS2
 {
     public partial class loginFrom : Form
     {
-        SqlConnection sql_connection;
-        String connectionString;
+        SqlConnection connection;
+        String connectionString=ConfigurationManager.ConnectionStrings["SIMS2.Properties.Settings.Database1_ConnectionString"].ConnectionString;
          
         private String user = "user";
         private String pass = "1234";
 
-        public loginFrom()
-        {
-            InitializeComponent();
-            connectionString=ConfigurationManager.ConnectionStrings["SIMS2.Properties.Settings.Database1_ConnectionString"].ConnectionString;
-            
-
-            
-        }
-      
         //for my database access and write
-         SqlConnection con;
+        SqlConnection con;
         SqlDataAdapter adp;
         SqlCommandBuilder cb;
         DataSet ds;
         DataTable dt;
         DataRow dr;
 
+        public loginFrom()
+        {
+            InitializeComponent();
+            
+            loadDataGrid();
+
+
+        }
+      
+      
+
         private void loginFrom_Load(object sender, EventArgs e)
         {
-
-            using (sql_connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from staff", sql_connection))
+            cmb_loginType.SelectedIndex = 2;
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from staff", connection))
             {
+                /*
                 DataTable datatable = new DataTable();
                 adapter.Fill(datatable);
 
@@ -53,10 +56,8 @@ namespace SIMS2
                 listBox1.ValueMember = "id";
                 listBox1.DataSource = datatable;
 
-              
-             
-
-                
+              */
+      
 
             }
         }
@@ -69,15 +70,15 @@ namespace SIMS2
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["SIMS2.Properties.Settings.Database1_ConnectionString"].ConnectionString);
             adp = new SqlDataAdapter();
             ds = new DataSet();
-            if(comboBox1.SelectedIndex == 0)
+            if(cmb_loginType.SelectedIndex == 0)
             {
                 //student
             }
-            else if (comboBox1.SelectedIndex == 1)
+            else if (cmb_loginType.SelectedIndex == 1)
             {
                 //Instructor
             }
-            else if (comboBox1.SelectedIndex == 2)
+            else if (cmb_loginType.SelectedIndex == 2)
             {
                 //Staff
                 adp.SelectCommand = new SqlCommand("select id, password from staff", con);
@@ -110,9 +111,26 @@ namespace SIMS2
                 }
 
             }
-            
+            con.Close();
         }
+        private void loadDataGrid()
+        { // a mathod to fill the datagrid with data
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adp = new SqlDataAdapter("select id, password from staff", connection))
+            {
 
+                ds = new DataSet(); 
+                adp.Fill(ds, "myData");
+                dt = ds.Tables["myData"];
+                // dr = dt.Rows[0];
+                dg.DataSource = ds.Tables["mydata"];
+                connection.Close();
+
+            }
+           
+            
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
            

@@ -76,7 +76,7 @@
             this.groupBox5.Controls.Add(this.cmb_SearchStudent);
             this.groupBox5.Controls.Add(this.btn_SelectStu);
             this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Location = new System.Drawing.Point(598, 25);
+            this.groupBox5.Location = new System.Drawing.Point(12, 9);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(200, 100);
             this.groupBox5.TabIndex = 2;
@@ -89,7 +89,7 @@
             this.groupBox6.Controls.Add(this.comboBox1);
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.label16);
-            this.groupBox6.Location = new System.Drawing.Point(598, 131);
+            this.groupBox6.Location = new System.Drawing.Point(12, 115);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(200, 100);
             this.groupBox6.TabIndex = 38;
@@ -136,7 +136,7 @@
             // 
             this.groupBox7.Controls.Add(this.btn_RegisterNewInstructor);
             this.groupBox7.Controls.Add(this.btn_RegisterNewStudent);
-            this.groupBox7.Location = new System.Drawing.Point(598, 248);
+            this.groupBox7.Location = new System.Drawing.Point(12, 232);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(200, 100);
             this.groupBox7.TabIndex = 40;
@@ -156,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 506);
+            this.ClientSize = new System.Drawing.Size(252, 395);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);

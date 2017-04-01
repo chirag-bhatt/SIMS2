@@ -34,9 +34,7 @@
             this.tb_username = new System.Windows.Forms.TextBox();
             this.tb_password = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.cmb_loginType = new System.Windows.Forms.ComboBox();
             this.dg = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.SuspendLayout();
@@ -92,40 +90,22 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "LoginType";
             // 
-            // comboBox1
+            // cmb_loginType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Student",
+            this.cmb_loginType.FormattingEnabled = true;
+            this.cmb_loginType.Items.AddRange(new object[] {
             "Instructor",
+            "Student",
             "Staff"});
-            this.comboBox1.Location = new System.Drawing.Point(99, 111);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 21);
-            this.comboBox1.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(32, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "test_btn";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(303, 30);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(232, 147);
-            this.listBox1.TabIndex = 8;
+            this.cmb_loginType.Location = new System.Drawing.Point(99, 111);
+            this.cmb_loginType.Name = "cmb_loginType";
+            this.cmb_loginType.Size = new System.Drawing.Size(120, 21);
+            this.cmb_loginType.TabIndex = 6;
             // 
             // dg
             // 
             this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg.Location = new System.Drawing.Point(286, 183);
+            this.dg.Location = new System.Drawing.Point(319, 30);
             this.dg.Name = "dg";
             this.dg.Size = new System.Drawing.Size(240, 150);
             this.dg.TabIndex = 9;
@@ -135,11 +115,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 364);
+            this.ClientSize = new System.Drawing.Size(638, 364);
             this.Controls.Add(this.dg);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmb_loginType);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.tb_username);
@@ -163,9 +141,7 @@
         private System.Windows.Forms.TextBox tb_username;
         private System.Windows.Forms.TextBox tb_password;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ComboBox cmb_loginType;
         private System.Windows.Forms.DataGridView dg;
     }
 }
