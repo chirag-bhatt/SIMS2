@@ -59,7 +59,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Register = new System.Windows.Forms.Button();
             this.lbl_Credit = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
@@ -69,11 +69,13 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.dg = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -88,6 +90,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dg);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -319,7 +322,7 @@
             this.tabPage3.Controls.Add(this.label24);
             this.tabPage3.Controls.Add(this.label23);
             this.tabPage3.Controls.Add(this.label22);
-            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.btn_Register);
             this.tabPage3.Controls.Add(this.lbl_Credit);
             this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Controls.Add(this.checkedListBox1);
@@ -388,14 +391,15 @@
             this.label22.TabIndex = 21;
             this.label22.Text = "Availble Credit :";
             // 
-            // button1
+            // btn_Register
             // 
-            this.button1.Location = new System.Drawing.Point(587, 327);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Register.Location = new System.Drawing.Point(587, 327);
+            this.btn_Register.Name = "btn_Register";
+            this.btn_Register.Size = new System.Drawing.Size(113, 23);
+            this.btn_Register.TabIndex = 20;
+            this.btn_Register.Text = "Register";
+            this.btn_Register.UseVisualStyleBackColor = true;
+            this.btn_Register.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbl_Credit
             // 
@@ -480,6 +484,14 @@
             this.label16.TabIndex = 6;
             this.label16.Text = "Year";
             // 
+            // dg
+            // 
+            this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg.Location = new System.Drawing.Point(366, 138);
+            this.dg.Name = "dg";
+            this.dg.Size = new System.Drawing.Size(380, 205);
+            this.dg.TabIndex = 54;
+            // 
             // RegisterNewStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,6 +508,7 @@
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -536,12 +549,13 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Register;
         private System.Windows.Forms.Label lbl_Credit;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DataGridView dg;
     }
 }
