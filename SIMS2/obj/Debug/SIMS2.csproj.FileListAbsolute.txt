@@ -17,3 +17,5 @@ C:\Users\amro\Desktop\C# project\SIMS2\SIMS2\obj\Debug\SIMS2.exe
 C:\Users\amro\Desktop\C# project\SIMS2\SIMS2\obj\Debug\SIMS2.pdb
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.AddNewInstructor.resources
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.Instructor_Interface.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\Database1.mdf
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\Database1_log.ldf

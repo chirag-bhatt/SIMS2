@@ -24,3 +24,12 @@ obj/
 [Dd]ebug*/
 [Rr]elease*/
 Ankh.NoLoad
+*.pdb
+SIMS2/obj/x86/Debug/SIMS2.exe
+*.pdb
+*.pdb
+*.config
+SIMS2/bin/Debug/SIMS2.exe
+SIMS2/bin/x86/Debug/SIMS2.exe
+SIMS2/obj/x86/Debug/SIMS2.exe
+*.Cache

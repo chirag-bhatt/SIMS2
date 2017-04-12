@@ -15,3 +15,4 @@ C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\x86\Debug\SIM
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\x86\Debug\SIMS2.csproj.GenerateResource.Cache
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\x86\Debug\SIMS2.exe
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\x86\Debug\SIMS2.pdb
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\x86\Debug\SIMS2.csprojResolveAssemblyReference.cache

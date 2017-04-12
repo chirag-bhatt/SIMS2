@@ -28,17 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cmb_SearchStudent = new System.Windows.Forms.ComboBox();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new SIMS2.Database1DataSet();
+            this.studentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label15 = new System.Windows.Forms.Label();
             this.btn_SelectStu = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_SearchInstructor = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.btn_RegisterNewStudent = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btn_RegisterNewInstructor = new System.Windows.Forms.Button();
+            this.studentTableAdapter = new SIMS2.Database1DataSetTableAdapters.studentTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -46,12 +54,30 @@
             // 
             // cmb_SearchStudent
             // 
+            this.cmb_SearchStudent.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_SearchStudent.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_SearchStudent.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.studentBindingSource, "studentId", true));
             this.cmb_SearchStudent.FormattingEnabled = true;
             this.cmb_SearchStudent.Location = new System.Drawing.Point(15, 40);
             this.cmb_SearchStudent.Name = "cmb_SearchStudent";
             this.cmb_SearchStudent.Size = new System.Drawing.Size(169, 21);
             this.cmb_SearchStudent.TabIndex = 35;
             this.cmb_SearchStudent.SelectedIndexChanged += new System.EventHandler(this.cmb_SearchStudent_SelectedIndexChanged);
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "student";
+            this.studentBindingSource.DataSource = this.database1DataSet;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentBindingSource1
+            // 
+            this.studentBindingSource1.DataMember = "student";
+            this.studentBindingSource1.DataSource = this.database1DataSet;
             // 
             // label15
             // 
@@ -86,7 +112,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.comboBox1);
+            this.groupBox6.Controls.Add(this.cmb_SearchInstructor);
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Location = new System.Drawing.Point(12, 115);
@@ -96,13 +122,15 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "View Instructor Info";
             // 
-            // comboBox1
+            // cmb_SearchInstructor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 35;
+            this.cmb_SearchInstructor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_SearchInstructor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_SearchInstructor.FormattingEnabled = true;
+            this.cmb_SearchInstructor.Location = new System.Drawing.Point(16, 40);
+            this.cmb_SearchInstructor.Name = "cmb_SearchInstructor";
+            this.cmb_SearchInstructor.Size = new System.Drawing.Size(169, 21);
+            this.cmb_SearchInstructor.TabIndex = 35;
             // 
             // button1
             // 
@@ -152,6 +180,10 @@
             this.btn_RegisterNewInstructor.Text = "Register new Instructor";
             this.btn_RegisterNewInstructor.UseVisualStyleBackColor = true;
             // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
             // Staff_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,6 +194,10 @@
             this.Controls.Add(this.groupBox5);
             this.Name = "Staff_Form";
             this.Text = "Staff_Form";
+            this.Load += new System.EventHandler(this.Staff_Form_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -177,11 +213,15 @@
         private System.Windows.Forms.Button btn_SelectStu;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_SearchInstructor;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btn_RegisterNewStudent;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button btn_RegisterNewInstructor;
+        private Database1DataSet database1DataSet;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private Database1DataSetTableAdapters.studentTableAdapter studentTableAdapter;
+        private System.Windows.Forms.BindingSource studentBindingSource1;
     }
 }

@@ -45,6 +45,9 @@ namespace SIMS2
         private void loginFrom_Load(object sender, EventArgs e)
         {
             cmb_loginType.SelectedIndex = 2;
+            tb_username.Text = "1";
+            tb_password.Text = "1";
+
             using (connection = new SqlConnection(connectionString))
             using (SqlDataAdapter adapter = new SqlDataAdapter("select * from staff", connection))
             {
