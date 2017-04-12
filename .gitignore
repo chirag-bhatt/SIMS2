@@ -34,3 +34,6 @@ SIMS2/bin/x86/Debug/SIMS2.exe
 SIMS2/obj/x86/Debug/SIMS2.exe
 *.Cache
 SIMS2/obj/Debug/SIMS2.csproj.GenerateResource.Cache
+*.Cache
+SIMS2/obj/Debug/SIMS2.exe
+*.pdb
