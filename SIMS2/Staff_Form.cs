@@ -86,5 +86,12 @@ namespace SIMS2
             vsfForm.ShowDialog();
 
         }
+
+        private void btn_SelectInstructor_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(cmb_SearchInstructor.Text);
+            ViewInstructorInfo vIIForm = new ViewInstructorInfo(id);
+            vIIForm.ShowDialog();
+        }
     }
 }

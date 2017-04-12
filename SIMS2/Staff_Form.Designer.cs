@@ -38,7 +38,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cmb_SearchInstructor = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_SelectInstructor = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.btn_RegisterNewStudent = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -114,7 +114,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.cmb_SearchInstructor);
-            this.groupBox6.Controls.Add(this.button1);
+            this.groupBox6.Controls.Add(this.btn_SelectInstructor);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Location = new System.Drawing.Point(12, 115);
             this.groupBox6.Name = "groupBox6";
@@ -133,14 +133,15 @@
             this.cmb_SearchInstructor.Size = new System.Drawing.Size(169, 21);
             this.cmb_SearchInstructor.TabIndex = 35;
             // 
-            // button1
+            // btn_SelectInstructor
             // 
-            this.button1.Location = new System.Drawing.Point(109, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Select";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_SelectInstructor.Location = new System.Drawing.Point(109, 67);
+            this.btn_SelectInstructor.Name = "btn_SelectInstructor";
+            this.btn_SelectInstructor.Size = new System.Drawing.Size(75, 23);
+            this.btn_SelectInstructor.TabIndex = 37;
+            this.btn_SelectInstructor.Text = "Select";
+            this.btn_SelectInstructor.UseVisualStyleBackColor = true;
+            this.btn_SelectInstructor.Click += new System.EventHandler(this.btn_SelectInstructor_Click);
             // 
             // label16
             // 
@@ -215,7 +216,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ComboBox cmb_SearchInstructor;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_SelectInstructor;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btn_RegisterNewStudent;
         private System.Windows.Forms.GroupBox groupBox7;
