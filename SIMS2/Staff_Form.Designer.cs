@@ -96,6 +96,7 @@
             this.btn_SelectStu.TabIndex = 37;
             this.btn_SelectStu.Text = "Select";
             this.btn_SelectStu.UseVisualStyleBackColor = true;
+            this.btn_SelectStu.Click += new System.EventHandler(this.btn_SelectStu_Click);
             // 
             // groupBox5
             // 

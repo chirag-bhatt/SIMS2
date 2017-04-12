@@ -49,8 +49,6 @@ namespace SIMS2
             // TODO: This line of code loads data into the 'database1DataSet.student' table. You can move, or remove it, as needed.
           //  this.studentTableAdapter.Fill(this.database1DataSet.student); i do not know about this ???
 
-           
-
 
 
             // to fill the cmb_SearchStudent wiht students ids
@@ -80,8 +78,13 @@ namespace SIMS2
 
 
         }
-     
 
-        
+        private void btn_SelectStu_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(cmb_SearchStudent.Text);
+            ViewStudentInfo vsfForm = new ViewStudentInfo(id);
+            vsfForm.ShowDialog();
+
+        }
     }
 }
