@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dg = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -69,13 +70,12 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.dg = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -100,6 +100,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Personal Info";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dg
+            // 
+            this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg.Location = new System.Drawing.Point(366, 138);
+            this.dg.Name = "dg";
+            this.dg.Size = new System.Drawing.Size(380, 205);
+            this.dg.TabIndex = 54;
             // 
             // groupBox2
             // 
@@ -229,6 +237,208 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Afghan",
+            "Albanian",
+            "Algerian",
+            "American",
+            "Andorran",
+            "Angolan",
+            "Antiguans",
+            "Argentinean",
+            "Armenian",
+            "Australian",
+            "Austrian",
+            "Azerbaijani",
+            "Bahamian",
+            "Bahraini",
+            "Bangladeshi",
+            "Barbadian",
+            "Barbudans",
+            "Batswana",
+            "Belarusian",
+            "Belgian",
+            "Belizean",
+            "Beninese",
+            "Bhutanese",
+            "Bolivian",
+            "Bosnian",
+            "Brazilian",
+            "British",
+            "Bruneian",
+            "Bulgarian",
+            "Burkinabe",
+            "Burmese",
+            "Burundian",
+            "Cambodian",
+            "Cameroonian",
+            "Canadian",
+            "Cape Verdean",
+            "Central African",
+            "Chadian",
+            "Chilean",
+            "Chinese",
+            "Colombian",
+            "Comoran",
+            "Congolese",
+            "Congolese",
+            "Costa Rican",
+            "Croatian",
+            "Cuban",
+            "Cypriot",
+            "Czech",
+            "Danish",
+            "Djibouti",
+            "Dominican",
+            "Dominican",
+            "Dutch",
+            "Dutchman",
+            "Dutchwoman",
+            "East Timorese",
+            "Ecuadorean",
+            "Egyptian",
+            "Emirian",
+            "Equatorial Guinean",
+            "Eritrean",
+            "Estonian",
+            "Ethiopian",
+            "Fijian",
+            "Filipino",
+            "Finnish",
+            "French",
+            "Gabonese",
+            "Gambian",
+            "Georgian",
+            "German",
+            "Ghanaian",
+            "Greek",
+            "Grenadian",
+            "Guatemalan",
+            "Guinea-Bissauan",
+            "Guinean",
+            "Guyanese",
+            "Haitian",
+            "Herzegovinian",
+            "Honduran",
+            "Hungarian",
+            "I-Kiribati",
+            "Icelander",
+            "Indian",
+            "Indonesian",
+            "Iranian",
+            "Iraqi",
+            "Irish",
+            "Irish",
+            "Israeli",
+            "Italian",
+            "Ivorian",
+            "Jamaican",
+            "Japanese",
+            "Jordanian",
+            "Kazakhstani",
+            "Kenyan",
+            "Kittian and Nevisian",
+            "Kuwaiti",
+            "Kyrgyz",
+            "Laotian",
+            "Latvian",
+            "Lebanese",
+            "Liberian",
+            "Libyan",
+            "Liechtensteiner",
+            "Lithuanian",
+            "Luxembourger",
+            "Macedonian",
+            "Malagasy",
+            "Malawian",
+            "Malaysian",
+            "Maldivan",
+            "Malian",
+            "Maltese",
+            "Marshallese",
+            "Mauritanian",
+            "Mauritian",
+            "Mexican",
+            "Micronesian",
+            "Moldovan",
+            "Monacan",
+            "Mongolian",
+            "Moroccan",
+            "Mosotho",
+            "Motswana",
+            "Mozambican",
+            "Namibian",
+            "Nauruan",
+            "Nepalese",
+            "Netherlander",
+            "New Zealander",
+            "Ni-Vanuatu",
+            "Nicaraguan",
+            "Nigerian",
+            "Nigerien",
+            "North Korean",
+            "Northern Irish",
+            "Norwegian",
+            "Omani",
+            "Pakistani",
+            "Palauan",
+            "Panamanian",
+            "Papua New Guinean",
+            "Paraguayan",
+            "Peruvian",
+            "Polish",
+            "Portuguese",
+            "Qatari",
+            "Romanian",
+            "Russian",
+            "Rwandan",
+            "Saint Lucian",
+            "Salvadoran",
+            "Samoan",
+            "San Marinese",
+            "Sao Tomean",
+            "Saudi",
+            "Scottish",
+            "Senegalese",
+            "Serbian",
+            "Seychellois",
+            "Sierra Leonean",
+            "Singaporean",
+            "Slovakian",
+            "Slovenian",
+            "Solomon Islander",
+            "Somali",
+            "South African",
+            "South Korean",
+            "Spanish",
+            "Sri Lankan",
+            "Sudanese",
+            "Surinamer",
+            "Swazi",
+            "Swedish",
+            "Swiss",
+            "Syrian",
+            "Taiwanese",
+            "Tajik",
+            "Tanzanian",
+            "Thai",
+            "Togolese",
+            "Tongan",
+            "Trinidadian or Tobagonian",
+            "Tunisian",
+            "Turkish",
+            "Tuvaluan",
+            "Ugandan",
+            "Ukrainian",
+            "Uruguayan",
+            "Uzbekistani",
+            "Venezuelan",
+            "Vietnamese",
+            "Welsh",
+            "Welsh",
+            "Yemenite",
+            "Zambian",
+            "Zimbabwean"});
             this.comboBox2.Location = new System.Drawing.Point(115, 160);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
@@ -484,14 +694,6 @@
             this.label16.TabIndex = 6;
             this.label16.Text = "Year";
             // 
-            // dg
-            // 
-            this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg.Location = new System.Drawing.Point(366, 138);
-            this.dg.Name = "dg";
-            this.dg.Size = new System.Drawing.Size(380, 205);
-            this.dg.TabIndex = 54;
-            // 
             // RegisterNewStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,13 +704,13 @@
             this.Text = "RegisterNewStudentForm";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -181,6 +181,7 @@
             this.btn_RegisterNewInstructor.TabIndex = 40;
             this.btn_RegisterNewInstructor.Text = "Register new Instructor";
             this.btn_RegisterNewInstructor.UseVisualStyleBackColor = true;
+            this.btn_RegisterNewInstructor.Click += new System.EventHandler(this.btn_RegisterNewInstructor_Click);
             // 
             // studentTableAdapter
             // 
