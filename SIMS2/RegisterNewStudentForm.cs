@@ -29,10 +29,10 @@ namespace SIMS2
         {
             InitializeComponent();
         //    lv_courses.CheckBoxes = true;
-          //  load_data();
+          //  load_data(); // look like we find eaiser way to do this 
         }
 
-        private void load_data()
+        private void load_data() 
         { // to load the departments names  into the cmb_departments
             using (con = new SqlConnection(connectionString))
             using (SqlDataAdapter adapter = new SqlDataAdapter("select * from department", con))
@@ -68,8 +68,8 @@ namespace SIMS2
                 con.Open();
 
                 SqlCommand cmd = new SqlCommand( "select courseId, cname, credits from course where courseId in( select courseId from Dept_course where deptId = @id)");
-            cmd.Parameters.AddWithValue("@id", dept_id);
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                 cmd.Parameters.AddWithValue("@id", dept_id);
+                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 cmd.Connection = con;
                 adapter.SelectCommand = cmd;
                 adapter.Fill(datatable);
@@ -202,10 +202,9 @@ namespace SIMS2
         private void RegisterNewStudentForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'database1DataSet1.department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.database1DataSet1.department);
+         //   this.departmentTableAdapter.Fill(this.database1DataSet1.department);
             // TODO: This line of code loads data into the 'database1DataSet.department' table. You can move, or remove it, as needed.
             this.departmentTableAdapter.Fill(this.database1DataSet.department);
-
         }
     }
 }

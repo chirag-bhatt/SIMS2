@@ -72,23 +72,27 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label18 = new System.Windows.Forms.Label();
             this.cmb_Department = new System.Windows.Forms.ComboBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new SIMS2.Database1DataSet();
+            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet1 = new SIMS2.Database1DataSet();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.database1DataSet = new SIMS2.Database1DataSet();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departmentTableAdapter = new SIMS2.Database1DataSetTableAdapters.departmentTableAdapter();
-            this.database1DataSet1 = new SIMS2.Database1DataSet();
-            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -706,7 +710,7 @@
             // cmb_Department
             // 
             this.cmb_Department.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource, "deptId", true));
-            this.cmb_Department.DataSource = this.departmentBindingSource1;
+            this.cmb_Department.DataSource = this.departmentBindingSource3;
             this.cmb_Department.DisplayMember = "dname";
             this.cmb_Department.FormattingEnabled = true;
             this.cmb_Department.Location = new System.Drawing.Point(145, 45);
@@ -715,6 +719,26 @@
             this.cmb_Department.TabIndex = 9;
             this.cmb_Department.ValueMember = "deptId";
             this.cmb_Department.SelectedIndexChanged += new System.EventHandler(this.cmb_Department_SelectedIndexChanged);
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "department";
+            this.departmentBindingSource.DataSource = this.database1DataSet;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // departmentBindingSource1
+            // 
+            this.departmentBindingSource1.DataMember = "department";
+            this.departmentBindingSource1.DataSource = this.database1DataSet1;
+            // 
+            // database1DataSet1
+            // 
+            this.database1DataSet1.DataSetName = "Database1DataSet";
+            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label17
             // 
@@ -734,29 +758,19 @@
             this.label16.TabIndex = 6;
             this.label16.Text = "Year";
             // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "department";
-            this.departmentBindingSource.DataSource = this.database1DataSet;
-            // 
             // departmentTableAdapter
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
             // 
-            // database1DataSet1
+            // departmentBindingSource2
             // 
-            this.database1DataSet1.DataSetName = "Database1DataSet";
-            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.departmentBindingSource2.DataMember = "department";
+            this.departmentBindingSource2.DataSource = this.database1DataSet;
             // 
-            // departmentBindingSource1
+            // departmentBindingSource3
             // 
-            this.departmentBindingSource1.DataMember = "department";
-            this.departmentBindingSource1.DataSource = this.database1DataSet1;
+            this.departmentBindingSource3.DataMember = "department";
+            this.departmentBindingSource3.DataSource = this.database1DataSet;
             // 
             // RegisterNewStudentForm
             // 
@@ -776,10 +790,12 @@
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -836,5 +852,7 @@
         private Database1DataSetTableAdapters.departmentTableAdapter departmentTableAdapter;
         private Database1DataSet database1DataSet1;
         private System.Windows.Forms.BindingSource departmentBindingSource1;
+        private System.Windows.Forms.BindingSource departmentBindingSource3;
+        private System.Windows.Forms.BindingSource departmentBindingSource2;
     }
 }
