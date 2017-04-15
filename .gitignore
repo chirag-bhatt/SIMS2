@@ -41,3 +41,4 @@ SIMS2/obj/Debug/SIMS2.exe
 SIMS2/obj/Debug/SIMS2.csproj.GenerateResource.Cache
 SIMS2/obj/Debug/SIMS2.exe
 SIMS2/obj/Debug/SIMS2.pdb
+*.cache
