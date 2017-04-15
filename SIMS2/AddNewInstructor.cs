@@ -98,7 +98,8 @@ namespace SIMS2
             string phonenum = tb_PhoneNumber.Text;
             try
             {
-                SqlCommand command1 = new SqlCommand("INSERT INTO inst VALUES(7889, 'john', 'smith', 'male', 'american', 111111111, 'john@gmail.com', 222222222)", con);
+                // fixed the insert by removing the id column
+                SqlCommand command1 = new SqlCommand("INSERT INTO inst VALUES( 'john', 'smith', 'male', 'american', 111111111, 'john@gmail.com', 222222222)", con);
 
                 command1.Parameters.AddWithValue("@fname", fname);
                 command1.Parameters.AddWithValue("@lname", lname);
