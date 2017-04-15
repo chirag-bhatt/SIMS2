@@ -93,5 +93,10 @@ namespace SIMS2
             ViewInstructorInfo vIIForm = new ViewInstructorInfo(id);
             vIIForm.ShowDialog();
         }
+
+        private void btn_RegisterNewInstructor_Click(object sender, EventArgs e)
+        {
+            new AddNewInstructor().ShowDialog();
+        }
     }
 }

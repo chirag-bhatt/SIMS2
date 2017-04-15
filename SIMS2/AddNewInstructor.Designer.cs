@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmb_Faculty = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.tb_PhoneNumber = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tb_NationalId = new System.Windows.Forms.TextBox();
@@ -45,11 +49,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.cmb_Faculty);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.checkedListBox1);
             this.groupBox2.Controls.Add(this.label1);
@@ -66,6 +68,49 @@
             this.groupBox2.TabIndex = 76;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Academics";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(113, 53);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 111;
+            // 
+            // cmb_Faculty
+            // 
+            this.cmb_Faculty.FormattingEnabled = true;
+            this.cmb_Faculty.Location = new System.Drawing.Point(113, 20);
+            this.cmb_Faculty.Name = "cmb_Faculty";
+            this.cmb_Faculty.Size = new System.Drawing.Size(121, 21);
+            this.cmb_Faculty.TabIndex = 110;
+            this.cmb_Faculty.SelectedIndexChanged += new System.EventHandler(this.cmb_Faculty_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 109;
+            this.label2.Text = "Faculty";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(9, 86);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(343, 154);
+            this.checkedListBox1.TabIndex = 76;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 75;
+            this.label1.Text = "Given Courses :";
             // 
             // groupBox1
             // 
@@ -89,15 +134,6 @@
             this.groupBox1.TabIndex = 99;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Info";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(686, 326);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 113;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // tb_PhoneNumber
             // 
@@ -132,6 +168,208 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Afghan",
+            "Albanian",
+            "Algerian",
+            "American",
+            "Andorran",
+            "Angolan",
+            "Antiguans",
+            "Argentinean",
+            "Armenian",
+            "Australian",
+            "Austrian",
+            "Azerbaijani",
+            "Bahamian",
+            "Bahraini",
+            "Bangladeshi",
+            "Barbadian",
+            "Barbudans",
+            "Batswana",
+            "Belarusian",
+            "Belgian",
+            "Belizean",
+            "Beninese",
+            "Bhutanese",
+            "Bolivian",
+            "Bosnian",
+            "Brazilian",
+            "British",
+            "Bruneian",
+            "Bulgarian",
+            "Burkinabe",
+            "Burmese",
+            "Burundian",
+            "Cambodian",
+            "Cameroonian",
+            "Canadian",
+            "Cape Verdean",
+            "Central African",
+            "Chadian",
+            "Chilean",
+            "Chinese",
+            "Colombian",
+            "Comoran",
+            "Congolese",
+            "Congolese",
+            "Costa Rican",
+            "Croatian",
+            "Cuban",
+            "Cypriot",
+            "Czech",
+            "Danish",
+            "Djibouti",
+            "Dominican",
+            "Dominican",
+            "Dutch",
+            "Dutchman",
+            "Dutchwoman",
+            "East Timorese",
+            "Ecuadorean",
+            "Egyptian",
+            "Emirian",
+            "Equatorial Guinean",
+            "Eritrean",
+            "Estonian",
+            "Ethiopian",
+            "Fijian",
+            "Filipino",
+            "Finnish",
+            "French",
+            "Gabonese",
+            "Gambian",
+            "Georgian",
+            "German",
+            "Ghanaian",
+            "Greek",
+            "Grenadian",
+            "Guatemalan",
+            "Guinea-Bissauan",
+            "Guinean",
+            "Guyanese",
+            "Haitian",
+            "Herzegovinian",
+            "Honduran",
+            "Hungarian",
+            "I-Kiribati",
+            "Icelander",
+            "Indian",
+            "Indonesian",
+            "Iranian",
+            "Iraqi",
+            "Irish",
+            "Irish",
+            "Israeli",
+            "Italian",
+            "Ivorian",
+            "Jamaican",
+            "Japanese",
+            "Jordanian",
+            "Kazakhstani",
+            "Kenyan",
+            "Kittian and Nevisian",
+            "Kuwaiti",
+            "Kyrgyz",
+            "Laotian",
+            "Latvian",
+            "Lebanese",
+            "Liberian",
+            "Libyan",
+            "Liechtensteiner",
+            "Lithuanian",
+            "Luxembourger",
+            "Macedonian",
+            "Malagasy",
+            "Malawian",
+            "Malaysian",
+            "Maldivan",
+            "Malian",
+            "Maltese",
+            "Marshallese",
+            "Mauritanian",
+            "Mauritian",
+            "Mexican",
+            "Micronesian",
+            "Moldovan",
+            "Monacan",
+            "Mongolian",
+            "Moroccan",
+            "Mosotho",
+            "Motswana",
+            "Mozambican",
+            "Namibian",
+            "Nauruan",
+            "Nepalese",
+            "Netherlander",
+            "New Zealander",
+            "Ni-Vanuatu",
+            "Nicaraguan",
+            "Nigerian",
+            "Nigerien",
+            "North Korean",
+            "Northern Irish",
+            "Norwegian",
+            "Omani",
+            "Pakistani",
+            "Palauan",
+            "Panamanian",
+            "Papua New Guinean",
+            "Paraguayan",
+            "Peruvian",
+            "Polish",
+            "Portuguese",
+            "Qatari",
+            "Romanian",
+            "Russian",
+            "Rwandan",
+            "Saint Lucian",
+            "Salvadoran",
+            "Samoan",
+            "San Marinese",
+            "Sao Tomean",
+            "Saudi",
+            "Scottish",
+            "Senegalese",
+            "Serbian",
+            "Seychellois",
+            "Sierra Leonean",
+            "Singaporean",
+            "Slovakian",
+            "Slovenian",
+            "Solomon Islander",
+            "Somali",
+            "South African",
+            "South Korean",
+            "Spanish",
+            "Sri Lankan",
+            "Sudanese",
+            "Surinamer",
+            "Swazi",
+            "Swedish",
+            "Swiss",
+            "Syrian",
+            "Taiwanese",
+            "Tajik",
+            "Tanzanian",
+            "Thai",
+            "Togolese",
+            "Tongan",
+            "Trinidadian or Tobagonian",
+            "Tunisian",
+            "Turkish",
+            "Tuvaluan",
+            "Ugandan",
+            "Ukrainian",
+            "Uruguayan",
+            "Uzbekistani",
+            "Venezuelan",
+            "Vietnamese",
+            "Welsh",
+            "Welsh",
+            "Yemenite",
+            "Zambian",
+            "Zimbabwean"});
             this.comboBox2.Location = new System.Drawing.Point(151, 134);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
@@ -216,22 +454,15 @@
             this.label12.TabIndex = 99;
             this.label12.Text = "Name";
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 75;
-            this.label1.Text = "Given Courses :";
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(9, 86);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(343, 154);
-            this.checkedListBox1.TabIndex = 76;
+            this.button1.Location = new System.Drawing.Point(686, 326);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 113;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
@@ -241,23 +472,7 @@
             this.button2.TabIndex = 114;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(113, 20);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 110;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 109;
-            this.label2.Text = "Faculty";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddNewInstructor
             // 
@@ -270,6 +485,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "AddNewInstructor";
             this.Text = "AddNewInstructor";
+            this.Load += new System.EventHandler(this.AddNewInstructor_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -296,10 +512,11 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmb_Faculty;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }
