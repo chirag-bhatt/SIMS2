@@ -32,7 +32,7 @@ namespace SIMS2
         private void ViewStudentInfo_Load(int id)
         {
             using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from student", connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from student where studentId ="+id, connection))
             {
 
                 DataTable datatable = new DataTable();
