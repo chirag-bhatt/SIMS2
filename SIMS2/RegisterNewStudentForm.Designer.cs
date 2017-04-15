@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dg = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -54,7 +56,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.lv_courses = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmb_year = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -62,20 +68,27 @@
             this.btn_Register = new System.Windows.Forms.Button();
             this.lbl_Credit = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label18 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmb_Department = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.dg = new System.Windows.Forms.DataGridView();
+            this.database1DataSet = new SIMS2.Database1DataSet();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentTableAdapter = new SIMS2.Database1DataSetTableAdapters.departmentTableAdapter();
+            this.database1DataSet1 = new SIMS2.Database1DataSet();
+            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -100,6 +113,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Personal Info";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dg
+            // 
+            this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg.Location = new System.Drawing.Point(366, 138);
+            this.dg.Name = "dg";
+            this.dg.Size = new System.Drawing.Size(380, 205);
+            this.dg.TabIndex = 54;
             // 
             // groupBox2
             // 
@@ -317,7 +338,8 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.comboBox4);
+            this.tabPage3.Controls.Add(this.lv_courses);
+            this.tabPage3.Controls.Add(this.cmb_year);
             this.tabPage3.Controls.Add(this.label25);
             this.tabPage3.Controls.Add(this.label24);
             this.tabPage3.Controls.Add(this.label23);
@@ -325,11 +347,10 @@
             this.tabPage3.Controls.Add(this.btn_Register);
             this.tabPage3.Controls.Add(this.lbl_Credit);
             this.tabPage3.Controls.Add(this.label19);
-            this.tabPage3.Controls.Add(this.checkedListBox1);
             this.tabPage3.Controls.Add(this.radioButton2);
             this.tabPage3.Controls.Add(this.radioButton1);
             this.tabPage3.Controls.Add(this.label18);
-            this.tabPage3.Controls.Add(this.comboBox3);
+            this.tabPage3.Controls.Add(this.cmb_Department);
             this.tabPage3.Controls.Add(this.label17);
             this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -340,20 +361,50 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // comboBox4
+            // lv_courses
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.lv_courses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.lv_courses.FullRowSelect = true;
+            this.lv_courses.GridLines = true;
+            this.lv_courses.Location = new System.Drawing.Point(22, 177);
+            this.lv_courses.Name = "lv_courses";
+            this.lv_courses.Size = new System.Drawing.Size(444, 173);
+            this.lv_courses.TabIndex = 26;
+            this.lv_courses.UseCompatibleStateImageBehavior = false;
+            this.lv_courses.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Code";
+            this.columnHeader1.Width = 65;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Course Name";
+            this.columnHeader2.Width = 290;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Credits";
+            this.columnHeader3.Width = 52;
+            // 
+            // cmb_year
+            // 
+            this.cmb_year.FormattingEnabled = true;
+            this.cmb_year.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
             "4",
             "5",
             "6"});
-            this.comboBox4.Location = new System.Drawing.Point(145, 72);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(172, 21);
-            this.comboBox4.TabIndex = 25;
+            this.cmb_year.Location = new System.Drawing.Point(145, 72);
+            this.cmb_year.Name = "cmb_year";
+            this.cmb_year.Size = new System.Drawing.Size(172, 21);
+            this.cmb_year.TabIndex = 25;
             // 
             // label25
             // 
@@ -419,17 +470,10 @@
             this.label19.TabIndex = 18;
             this.label19.Text = "Total Credit :";
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(145, 177);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(310, 139);
-            this.checkedListBox1.TabIndex = 17;
-            // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
             this.radioButton2.Location = new System.Drawing.Point(296, 144);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(60, 17);
@@ -445,7 +489,6 @@
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(68, 17);
             this.radioButton1.TabIndex = 15;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Standard";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
@@ -458,13 +501,18 @@
             this.label18.TabIndex = 10;
             this.label18.Text = "Courses :";
             // 
-            // comboBox3
+            // cmb_Department
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(145, 45);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(172, 21);
-            this.comboBox3.TabIndex = 9;
+            this.cmb_Department.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource, "deptId", true));
+            this.cmb_Department.DataSource = this.departmentBindingSource1;
+            this.cmb_Department.DisplayMember = "dname";
+            this.cmb_Department.FormattingEnabled = true;
+            this.cmb_Department.Location = new System.Drawing.Point(145, 45);
+            this.cmb_Department.Name = "cmb_Department";
+            this.cmb_Department.Size = new System.Drawing.Size(172, 21);
+            this.cmb_Department.TabIndex = 9;
+            this.cmb_Department.ValueMember = "deptId";
+            this.cmb_Department.SelectedIndexChanged += new System.EventHandler(this.cmb_Department_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -484,13 +532,29 @@
             this.label16.TabIndex = 6;
             this.label16.Text = "Year";
             // 
-            // dg
+            // database1DataSet
             // 
-            this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg.Location = new System.Drawing.Point(366, 138);
-            this.dg.Name = "dg";
-            this.dg.Size = new System.Drawing.Size(380, 205);
-            this.dg.TabIndex = 54;
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "department";
+            this.departmentBindingSource.DataSource = this.database1DataSet;
+            // 
+            // departmentTableAdapter
+            // 
+            this.departmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // database1DataSet1
+            // 
+            this.database1DataSet1.DataSetName = "Database1DataSet";
+            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // departmentBindingSource1
+            // 
+            this.departmentBindingSource1.DataMember = "department";
+            this.departmentBindingSource1.DataSource = this.database1DataSet1;
             // 
             // RegisterNewStudentForm
             // 
@@ -500,15 +564,20 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "RegisterNewStudentForm";
             this.Text = "RegisterNewStudentForm";
+            this.Load += new System.EventHandler(this.RegisterNewStudentForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -542,20 +611,28 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmb_Department;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btn_Register;
         private System.Windows.Forms.Label lbl_Credit;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cmb_year;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.DataGridView dg;
+        private System.Windows.Forms.ListView lv_courses;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private Database1DataSet database1DataSet;
+        private System.Windows.Forms.BindingSource departmentBindingSource;
+        private Database1DataSetTableAdapters.departmentTableAdapter departmentTableAdapter;
+        private Database1DataSet database1DataSet1;
+        private System.Windows.Forms.BindingSource departmentBindingSource1;
     }
 }

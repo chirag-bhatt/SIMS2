@@ -17,7 +17,7 @@ namespace SIMS2
     public partial class RegisterNewStudentForm : Form
     {
         SqlConnection sql_connection;
-        String connectionString;
+        String connectionString = ConfigurationManager.ConnectionStrings["SIMS2.Properties.Settings.Database1_ConnectionString"].ConnectionString;
         //for my database access and write
         SqlConnection con;
         SqlDataAdapter adp;
@@ -28,12 +28,71 @@ namespace SIMS2
         public RegisterNewStudentForm()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["SIMS2.Properties.Settings.Database1_ConnectionString"].ConnectionString;
+        //    lv_courses.CheckBoxes = true;
+          //  load_data();
+        }
+
+        private void load_data()
+        { // to load the departments names  into the cmb_departments
+            using (con = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from department", con))
+            {
+
+                DataTable datatable = new DataTable();
+                adapter.Fill(datatable);
+                for(int i = 0; i < datatable.Rows.Count; i++)
+                {
+                    DataRow dataRow = datatable.Rows[i];
+                    cmb_Department.Items.Add(dataRow[1].ToString());
+                    
+
+                }
+
+            }
+
+
+        }
+        private void cmb_Department_SelectedIndexChanged(object sender, EventArgs e)
+        {// to load the courses for the selected department
+
+            lv_courses.Items.Clear();
+            String dept_id = Convert.ToString(cmb_Department.SelectedValue) ;
+           // MessageBox.Show(dept_id);
+           
+              String query = "select courseId, cname, credits from course where courseId in( select courseId from Dept_course where deptId== @id)";
+            
+
+                DataTable datatable = new DataTable();
+               // MySqlConnection conn = new MySqlConnection(@"connection string");//tested and working
+                con = new SqlConnection(connectionString);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand( "select courseId, cname, credits from course where courseId in( select courseId from Dept_course where deptId = @id)");
+            cmd.Parameters.AddWithValue("@id", dept_id);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                cmd.Connection = con;
+                adapter.SelectCommand = cmd;
+                adapter.Fill(datatable);
+               
+ 
+            for (int i = 0; i < datatable.Rows.Count; i++)
+            {
+                DataRow dataRow = datatable.Rows[i];
+                ListViewItem lvItem = new ListViewItem();
+                lvItem.Text = dataRow[0].ToString();
+                lvItem.SubItems.Add(dataRow[1].ToString());
+                lvItem.SubItems.Add(dataRow[2].ToString());
+
+                lv_courses.Items.Add(lvItem);
+
+            }
+            con.Close();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            con = new SqlConnection(ConfigurationManager.ConnectionStrings["SIMS2.Properties.Settings.Database1_ConnectionString"].ConnectionString);
+            con = new SqlConnection(connectionString);
             adp = new SqlDataAdapter();
             ds = new DataSet();
 
@@ -58,9 +117,10 @@ namespace SIMS2
             {
                 
 
-                SqlCommand command1 = new SqlCommand("INSERT INTO student VALUES (123456,@fname,@lname,@fathername,'1/1/2010',@gender,@registerationDate,@nationality,@nationalId,@passport,@adress,@email,@phonenum);", con);
+                SqlCommand command1 = new SqlCommand("INSERT INTO student VALUES (@fname,@lname,@fathername,'1/1/2010',@gender,@registerationDate,@nationality,@nationalId,@passport,@adress,@email,@phonenum);", con);
 
                 //@fname,@lname,@fathername,@bday,@gender,@registerationDate,@nationality,@nationalId,@passport,@adress,@email,@phonenum
+
                 command1.Parameters.AddWithValue("@fname", fname);
                 command1.Parameters.AddWithValue("@lname", lname);
                 command1.Parameters.AddWithValue("@fathername",fathername);
@@ -83,6 +143,7 @@ namespace SIMS2
                 dt = ds.Tables["myData"];
                 // dr = dt.Rows[0];
                 dg.DataSource = ds.Tables["mydata"];
+                con.Close();
 
             }
              catch (Exception ex)
@@ -138,6 +199,13 @@ namespace SIMS2
 
         }
 
-       
+        private void RegisterNewStudentForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'database1DataSet1.department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.database1DataSet1.department);
+            // TODO: This line of code loads data into the 'database1DataSet.department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.database1DataSet.department);
+
+        }
     }
 }

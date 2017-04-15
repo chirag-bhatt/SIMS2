@@ -43,7 +43,7 @@
             this.btn_RegisterNewStudent = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btn_RegisterNewInstructor = new System.Windows.Forms.Button();
-            this.studentTableAdapter = new SIMS2.Database1DataSetTableAdapters.studentTableAdapter();
+         //   this.studentTableAdapter = new SIMS2.Database1DataSetTableAdapters.studentTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).BeginInit();
@@ -184,7 +184,7 @@
             // 
             // studentTableAdapter
             // 
-            this.studentTableAdapter.ClearBeforeFill = true;
+      //      this.studentTableAdapter.ClearBeforeFill = true;
             // 
             // Staff_Form
             // 
@@ -223,7 +223,7 @@
         private System.Windows.Forms.Button btn_RegisterNewInstructor;
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource studentBindingSource;
-        private Database1DataSetTableAdapters.studentTableAdapter studentTableAdapter;
+
         private System.Windows.Forms.BindingSource studentBindingSource1;
     }
 }
