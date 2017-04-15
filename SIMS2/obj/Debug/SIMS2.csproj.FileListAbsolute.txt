@@ -1,21 +1,13 @@
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\SIMS2.exe.config
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\SIMS2.exe
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\SIMS2.pdb
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.Form1.resources
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.Properties.Resources.resources
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.csproj.GenerateResource.Cache
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.exe
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.pdb
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.RegisterNewStudentForm.resources
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.Staff_Form.resources
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.loginFrom.resources
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.ViewInstructorInfo.resources
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.ViewStudentInfo.resources
 C:\Users\amro\Desktop\C# project\SIMS2\SIMS2\bin\Debug\SIMS2.exe.config
 C:\Users\amro\Desktop\C# project\SIMS2\SIMS2\obj\Debug\SIMS2.exe
 C:\Users\amro\Desktop\C# project\SIMS2\SIMS2\obj\Debug\SIMS2.pdb
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.AddNewInstructor.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.Form1.resources
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.Instructor_Interface.resources
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\Database1.mdf
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\Database1_log.ldf
-C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.csprojResolveAssemblyReference.cache
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.loginFrom.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.Properties.Resources.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.RegisterNewStudentForm.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.Staff_Form.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.ViewInstructorInfo.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.ViewStudentInfo.resources
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.csproj.GenerateResource.Cache

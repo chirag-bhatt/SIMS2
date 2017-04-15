@@ -24,7 +24,7 @@ namespace SIMS2
         SqlCommandBuilder cb;
         DataSet ds;
         DataTable dt;
-        DataRow dr;
+    
         public RegisterNewStudentForm()
         {
             InitializeComponent();

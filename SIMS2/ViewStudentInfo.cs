@@ -22,17 +22,18 @@ namespace SIMS2
             InitializeComponent();
         }
 
-        public ViewStudentInfo(int id)
+        public ViewStudentInfo(int Student_id)
         {
             InitializeComponent();
-            ViewStudentInfo_Load(id);
+            ViewStudentInfo_Load(Student_id);
 
         }
 
-        private void ViewStudentInfo_Load(int id)
+        private void ViewStudentInfo_Load(int Student_id)
         {
+          // load the personal info
             using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from student where studentId ="+id, connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from student where studentId ="+ Student_id, connection))
             {
 
                 DataTable datatable = new DataTable();
@@ -50,7 +51,32 @@ namespace SIMS2
                 lbl_Email.Text = dataRow[11].ToString();
                 lbl_PhoneNo.Text = dataRow[12].ToString();
 
-               
+            }
+
+
+            // query for the student's Courses and add them to the datagridview Course_details
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from course c , Student_Course sc WHERE c.courseId =sc.courseId and sc.studentId =" + Student_id
+                , connection))
+            {
+                DataTable datatable = new DataTable();
+                adapter.Fill(datatable);
+                for(int i = 0;i<datatable.Rows.Count;i++)
+                {
+                        DataRow datarow = datatable.Rows[i];
+                    DataGridViewRow dgvRow = new DataGridViewRow();
+                    dgvRow.CreateCells(GV_CoursesData);
+                    
+                    dgvRow.Cells[0].Value = datarow[0];
+                    dgvRow.Cells[1].Value = datarow[1];
+                    dgvRow.Cells[2].Value = datarow[2];
+                    dgvRow.Cells[3].Value = datarow[3];
+                    dgvRow.Cells[4].Value = datarow[6];
+
+
+                    GV_CoursesData.Rows.Add(dgvRow);
+                }
+
 
             }
 
@@ -63,6 +89,11 @@ namespace SIMS2
         }
 
         private void lbl_email_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViewStudentInfo_Load(object sender, EventArgs e)
         {
 
         }

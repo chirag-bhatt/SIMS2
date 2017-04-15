@@ -58,6 +58,13 @@
             this.lbl_Lname = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbl_PhoneNo = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lbl_passNo = new System.Windows.Forms.Label();
+            this.lbl_Email = new System.Windows.Forms.Label();
+            this.lbl_NationalId = new System.Windows.Forms.Label();
+            this.lbl_gender = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.lbl_birthday = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_Nationalty = new System.Windows.Forms.Label();
@@ -70,7 +77,7 @@
             this.Academic_tab = new System.Windows.Forms.TabPage();
             this.btn_showTranscript = new System.Windows.Forms.Button();
             this.tab_Courses = new System.Windows.Forms.TabPage();
-            this.Courses_dataGridView = new System.Windows.Forms.DataGridView();
+            this.GV_CoursesData = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,13 +92,6 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lbl_gender = new System.Windows.Forms.Label();
-            this.lbl_NationalId = new System.Windows.Forms.Label();
-            this.lbl_Email = new System.Windows.Forms.Label();
-            this.lbl_passNo = new System.Windows.Forms.Label();
-            this.lbl_PhoneNo = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.info_tab.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -100,7 +100,7 @@
             this.groupBox1.SuspendLayout();
             this.Academic_tab.SuspendLayout();
             this.tab_Courses.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Courses_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_CoursesData)).BeginInit();
             this.tab_CourseTaking.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CourseTaking_dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -357,6 +357,69 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Personal Info";
             // 
+            // lbl_PhoneNo
+            // 
+            this.lbl_PhoneNo.AutoSize = true;
+            this.lbl_PhoneNo.Location = new System.Drawing.Point(121, 165);
+            this.lbl_PhoneNo.Name = "lbl_PhoneNo";
+            this.lbl_PhoneNo.Size = new System.Drawing.Size(38, 13);
+            this.lbl_PhoneNo.TabIndex = 38;
+            this.lbl_PhoneNo.Text = "Phone";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(12, 165);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(38, 13);
+            this.label17.TabIndex = 37;
+            this.label17.Text = "Phone";
+            // 
+            // lbl_passNo
+            // 
+            this.lbl_passNo.AutoSize = true;
+            this.lbl_passNo.Location = new System.Drawing.Point(121, 138);
+            this.lbl_passNo.Name = "lbl_passNo";
+            this.lbl_passNo.Size = new System.Drawing.Size(66, 13);
+            this.lbl_passNo.TabIndex = 36;
+            this.lbl_passNo.Text = "passport NO";
+            // 
+            // lbl_Email
+            // 
+            this.lbl_Email.AutoSize = true;
+            this.lbl_Email.Location = new System.Drawing.Point(123, 16);
+            this.lbl_Email.Name = "lbl_Email";
+            this.lbl_Email.Size = new System.Drawing.Size(32, 13);
+            this.lbl_Email.TabIndex = 35;
+            this.lbl_Email.Text = "Email";
+            // 
+            // lbl_NationalId
+            // 
+            this.lbl_NationalId.AutoSize = true;
+            this.lbl_NationalId.Location = new System.Drawing.Point(123, 110);
+            this.lbl_NationalId.Name = "lbl_NationalId";
+            this.lbl_NationalId.Size = new System.Drawing.Size(60, 13);
+            this.lbl_NationalId.TabIndex = 34;
+            this.lbl_NationalId.Text = "National ID";
+            // 
+            // lbl_gender
+            // 
+            this.lbl_gender.AutoSize = true;
+            this.lbl_gender.Location = new System.Drawing.Point(123, 64);
+            this.lbl_gender.Name = "lbl_gender";
+            this.lbl_gender.Size = new System.Drawing.Size(42, 13);
+            this.lbl_gender.TabIndex = 33;
+            this.lbl_gender.Text = "Gender";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 64);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(42, 13);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Gender";
+            // 
             // lbl_birthday
             // 
             this.lbl_birthday.AutoSize = true;
@@ -461,7 +524,7 @@
             // 
             // tab_Courses
             // 
-            this.tab_Courses.Controls.Add(this.Courses_dataGridView);
+            this.tab_Courses.Controls.Add(this.GV_CoursesData);
             this.tab_Courses.Location = new System.Drawing.Point(4, 22);
             this.tab_Courses.Name = "tab_Courses";
             this.tab_Courses.Padding = new System.Windows.Forms.Padding(3);
@@ -470,8 +533,9 @@
             this.tab_Courses.Text = "Courses";
             this.tab_Courses.UseVisualStyleBackColor = true;
             // 
-            // Courses_dataGridView
+            // GV_CoursesData
             // 
+            this.GV_CoursesData.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -479,9 +543,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Courses_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.Courses_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Courses_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GV_CoursesData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.GV_CoursesData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GV_CoursesData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
@@ -494,9 +558,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Courses_dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Courses_dataGridView.Location = new System.Drawing.Point(3, 6);
-            this.Courses_dataGridView.Name = "Courses_dataGridView";
+            this.GV_CoursesData.DefaultCellStyle = dataGridViewCellStyle2;
+            this.GV_CoursesData.Location = new System.Drawing.Point(6, 6);
+            this.GV_CoursesData.Name = "GV_CoursesData";
+            this.GV_CoursesData.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -504,25 +569,30 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Courses_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.Courses_dataGridView.Size = new System.Drawing.Size(720, 373);
-            this.Courses_dataGridView.TabIndex = 2;
+            this.GV_CoursesData.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.GV_CoursesData.Size = new System.Drawing.Size(720, 373);
+            this.GV_CoursesData.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn6
             // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "courseId";
             this.dataGridViewTextBoxColumn6.Frozen = true;
             this.dataGridViewTextBoxColumn6.HeaderText = "Course Code";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "cname";
             this.dataGridViewTextBoxColumn7.Frozen = true;
             this.dataGridViewTextBoxColumn7.HeaderText = "Course Name";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 200;
             // 
             // dataGridViewTextBoxColumn8
             // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "credits";
             this.dataGridViewTextBoxColumn8.Frozen = true;
             this.dataGridViewTextBoxColumn8.HeaderText = "Credit";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
@@ -645,69 +715,6 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 64);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 13);
-            this.label15.TabIndex = 32;
-            this.label15.Text = "Gender";
-            // 
-            // lbl_gender
-            // 
-            this.lbl_gender.AutoSize = true;
-            this.lbl_gender.Location = new System.Drawing.Point(123, 64);
-            this.lbl_gender.Name = "lbl_gender";
-            this.lbl_gender.Size = new System.Drawing.Size(42, 13);
-            this.lbl_gender.TabIndex = 33;
-            this.lbl_gender.Text = "Gender";
-            // 
-            // lbl_NationalId
-            // 
-            this.lbl_NationalId.AutoSize = true;
-            this.lbl_NationalId.Location = new System.Drawing.Point(123, 110);
-            this.lbl_NationalId.Name = "lbl_NationalId";
-            this.lbl_NationalId.Size = new System.Drawing.Size(60, 13);
-            this.lbl_NationalId.TabIndex = 34;
-            this.lbl_NationalId.Text = "National ID";
-            // 
-            // lbl_Email
-            // 
-            this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Location = new System.Drawing.Point(123, 16);
-            this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(32, 13);
-            this.lbl_Email.TabIndex = 35;
-            this.lbl_Email.Text = "Email";
-            // 
-            // lbl_passNo
-            // 
-            this.lbl_passNo.AutoSize = true;
-            this.lbl_passNo.Location = new System.Drawing.Point(121, 138);
-            this.lbl_passNo.Name = "lbl_passNo";
-            this.lbl_passNo.Size = new System.Drawing.Size(66, 13);
-            this.lbl_passNo.TabIndex = 36;
-            this.lbl_passNo.Text = "passport NO";
-            // 
-            // lbl_PhoneNo
-            // 
-            this.lbl_PhoneNo.AutoSize = true;
-            this.lbl_PhoneNo.Location = new System.Drawing.Point(121, 165);
-            this.lbl_PhoneNo.Name = "lbl_PhoneNo";
-            this.lbl_PhoneNo.Size = new System.Drawing.Size(38, 13);
-            this.lbl_PhoneNo.TabIndex = 38;
-            this.lbl_PhoneNo.Text = "Phone";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 165);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(38, 13);
-            this.label17.TabIndex = 37;
-            this.label17.Text = "Phone";
-            // 
             // ViewStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -716,6 +723,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "ViewStudentInfo";
             this.Text = "ViewStudentInfo";
+            this.Load += new System.EventHandler(this.ViewStudentInfo_Load);
             this.tabControl1.ResumeLayout(false);
             this.info_tab.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -728,7 +736,7 @@
             this.groupBox1.PerformLayout();
             this.Academic_tab.ResumeLayout(false);
             this.tab_Courses.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Courses_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_CoursesData)).EndInit();
             this.tab_CourseTaking.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CourseTaking_dataGridView2)).EndInit();
             this.ResumeLayout(false);
@@ -773,12 +781,7 @@
         private System.Windows.Forms.TabPage Academic_tab;
         private System.Windows.Forms.Button btn_showTranscript;
         private System.Windows.Forms.TabPage tab_Courses;
-        private System.Windows.Forms.DataGridView Courses_dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridView GV_CoursesData;
         private System.Windows.Forms.TabPage tab_CourseTaking;
         private System.Windows.Forms.Button btn_Drop;
         private System.Windows.Forms.Button btn_take;
@@ -795,5 +798,10 @@
         private System.Windows.Forms.Label lbl_Email;
         private System.Windows.Forms.Label lbl_PhoneNo;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
     }
 }
