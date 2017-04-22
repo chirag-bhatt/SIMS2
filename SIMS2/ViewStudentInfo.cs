@@ -52,6 +52,18 @@ namespace SIMS2
                 lbl_PhoneNo.Text = dataRow[12].ToString();
 
             }
+            // to retreive the department of the student
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select dname from student_dept sd , department d where sd.deptid=d.deptid and studentId =" + Student_id, connection))
+            {
+
+                DataTable datatable = new DataTable();
+                adapter.Fill(datatable);
+                DataRow dataRow = datatable.Rows[0];
+                lbl_Department.Text = dataRow[0].ToString();
+                
+
+            }
 
 
             // query for the student's Courses and add them to the datagridview Course_details

@@ -668,7 +668,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.CourseTaking_dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
-            this.CourseTaking_dataGridView2.Location = new System.Drawing.Point(0, 68);
+            this.CourseTaking_dataGridView2.Location = new System.Drawing.Point(3, 106);
             this.CourseTaking_dataGridView2.Name = "CourseTaking_dataGridView2";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
