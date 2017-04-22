@@ -11,3 +11,11 @@ C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.S
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.ViewInstructorInfo.resources
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.ViewStudentInfo.resources
 C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.csproj.GenerateResource.Cache
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\SIMS2.exe.config
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\Database1.mdf
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\Database1_log.ldf
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\SIMS2.exe
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\bin\Debug\SIMS2.pdb
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.exe
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.pdb
+C:\Users\noh\Documents\Visual Studio 2015\Projects\SIMS2\SIMS2\obj\Debug\SIMS2.csprojResolveAssemblyReference.cache

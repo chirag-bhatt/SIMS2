@@ -16,7 +16,9 @@ namespace SIMS2
     {
         SqlConnection connection;
         String connectionString = ConfigurationManager.ConnectionStrings["SIMS2.Properties.Settings.Database1_ConnectionString"].ConnectionString;
-
+        String departmentId;
+        String [] takenCourses;
+        int Student_id;
         public ViewStudentInfo()
         {
             InitializeComponent();
@@ -25,15 +27,17 @@ namespace SIMS2
         public ViewStudentInfo(int Student_id)
         {
             InitializeComponent();
-            ViewStudentInfo_Load(Student_id);
-
+            this.Student_id = Student_id;
+            ViewStudentInfo_Load();
+            
         }
 
-        private void ViewStudentInfo_Load(int Student_id)
+        private void ViewStudentInfo_Load()
         {
-          // load the personal info
+
+            // load the personal info
             using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from student where studentId ="+ Student_id, connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from student where studentId =" + Student_id, connection))
             {
 
                 DataTable datatable = new DataTable();
@@ -54,17 +58,18 @@ namespace SIMS2
             }
             // to retreive the department of the student
             using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("select dname from student_dept sd , department d where sd.deptid=d.deptid and studentId =" + Student_id, connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select d.dname , d.deptid from student_dept sd , department d where sd.deptid=d.deptid and studentId =" + Student_id, connection))
             {
 
                 DataTable datatable = new DataTable();
                 adapter.Fill(datatable);
                 DataRow dataRow = datatable.Rows[0];
+
                 lbl_Department.Text = dataRow[0].ToString();
-                
+                departmentId = dataRow[1].ToString();
+                MessageBox.Show(departmentId);
 
             }
-
 
             // query for the student's Courses and add them to the datagridview Course_details
             using (connection = new SqlConnection(connectionString))
@@ -73,26 +78,140 @@ namespace SIMS2
             {
                 DataTable datatable = new DataTable();
                 adapter.Fill(datatable);
-                for(int i = 0;i<datatable.Rows.Count;i++)
+                takenCourses = new String[datatable.Rows.Count];
+
+                for (int i = 0; i < datatable.Rows.Count; i++)
                 {
-                        DataRow datarow = datatable.Rows[i];
+                    DataRow datarow = datatable.Rows[i];
                     DataGridViewRow dgvRow = new DataGridViewRow();
+
                     dgvRow.CreateCells(GV_CoursesData);
-                    
+                    takenCourses[i] = datarow[0].ToString();
                     dgvRow.Cells[0].Value = datarow[0];
                     dgvRow.Cells[1].Value = datarow[1];
                     dgvRow.Cells[2].Value = datarow[2];
                     dgvRow.Cells[3].Value = datarow[3];
                     dgvRow.Cells[4].Value = datarow[6];
 
-
                     GV_CoursesData.Rows.Add(dgvRow);
+
+
                 }
 
+            }
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from course c , Student_Course sc WHERE c.courseId =sc.courseId and sc.studentId =" + Student_id
+                , connection))
+            {
+                DataTable datatable = new DataTable();
+                adapter.Fill(datatable);
+                for (int i = 0; i < datatable.Rows.Count; i++)
+                {
+                    DataRow datarow = datatable.Rows[i];
+                    DataGridViewRow dgvRow = new DataGridViewRow();
 
+                    dgvRow.CreateCells(dgv_TakenCourse);
+
+                    dgvRow.Cells[0].Value = datarow[0];
+                    dgvRow.Cells[1].Value = datarow[1];
+                    dgvRow.Cells[2].Value = datarow[2];
+                    dgvRow.Cells[3].Value = datarow[3];
+                    dgvRow.Cells[4].Value = datarow[6];
+
+                    dgv_TakenCourse.Rows.Add(dgvRow);
+
+
+                }
             }
 
 
+            // to fill the offered courses
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from course c ,Dept_course dc where dc.courseid=c.courseid and dc.deptid =" + departmentId, connection))
+            {
+                DataTable datatable = new DataTable();
+                adapter.Fill(datatable);
+                
+                for (int i = 0; i < datatable.Rows.Count; i++)
+                {
+                    DataRow datarow = datatable.Rows[i];
+                    DataGridViewRow dgvRow = new DataGridViewRow();
+
+                    dgvRow.CreateCells(dgv_AvailbleCourses);
+
+                    dgvRow.Cells[0].Value = datarow[0];
+                    dgvRow.Cells[1].Value = datarow[1];
+                    dgvRow.Cells[2].Value = datarow[2];
+                    dgvRow.Cells[3].Value = datarow[3];
+                   // dgvRow.Cells[4].Value = datarow[6];
+
+                    dgv_AvailbleCourses.Rows.Add(dgvRow);
+
+
+                }
+            }
+
+            dgv_AvailbleCourses.ClearSelection();
+            dgv_TakenCourse.ClearSelection();
+
+        }
+        private void Load_student_Courses()
+        {
+
+            dgv_TakenCourse.Rows.Clear();
+            GV_CoursesData.Rows.Clear();
+            // query for the student's Courses and add them to the datagridview Course_details
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from course c , Student_Course sc WHERE c.courseId =sc.courseId and sc.studentId =" + Student_id
+                , connection))
+            {
+                DataTable datatable = new DataTable();
+                adapter.Fill(datatable);
+                takenCourses = new String[datatable.Rows.Count];
+
+                for (int i = 0; i < datatable.Rows.Count; i++)
+                {
+                    DataRow datarow = datatable.Rows[i];
+                    DataGridViewRow dgvRow = new DataGridViewRow();
+
+                    dgvRow.CreateCells(GV_CoursesData);
+                    takenCourses[i] = datarow[0].ToString();
+                    dgvRow.Cells[0].Value = datarow[0];
+                    dgvRow.Cells[1].Value = datarow[1];
+                    dgvRow.Cells[2].Value = datarow[2];
+                    dgvRow.Cells[3].Value = datarow[3];
+                    dgvRow.Cells[4].Value = datarow[6];
+
+                    GV_CoursesData.Rows.Add(dgvRow);
+
+
+                }
+
+            }
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from course c , Student_Course sc WHERE c.courseId =sc.courseId and sc.studentId =" + Student_id
+                , connection))
+            {
+                DataTable datatable = new DataTable();
+                adapter.Fill(datatable);
+                for (int i = 0; i < datatable.Rows.Count; i++)
+                {
+                    DataRow datarow = datatable.Rows[i];
+                    DataGridViewRow dgvRow = new DataGridViewRow();
+
+                    dgvRow.CreateCells(dgv_TakenCourse);
+
+                    dgvRow.Cells[0].Value = datarow[0];
+                    dgvRow.Cells[1].Value = datarow[1];
+                    dgvRow.Cells[2].Value = datarow[2];
+                    dgvRow.Cells[3].Value = datarow[3];
+                    dgvRow.Cells[4].Value = datarow[6];
+
+                    dgv_TakenCourse.Rows.Add(dgvRow);
+
+
+                }
+            }
         }
 
         private void lbl_name_Click(object sender, EventArgs e)
@@ -107,6 +226,82 @@ namespace SIMS2
 
         private void ViewStudentInfo_Load(object sender, EventArgs e)
         {
+
+        }
+
+       
+
+       
+
+        private void dgv_TakenCourse_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgv_AvailbleCourses.ClearSelection();
+            
+            
+        }
+
+        private void dgv_AvailbleCourses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            dgv_TakenCourse.ClearSelection();
+        }
+
+        private void btn_take_Click_1(object sender, EventArgs e)
+        {
+            
+            var code = dgv_AvailbleCourses.SelectedRows[0].Cells[0].Value.ToString();
+            MessageBox.Show(code);
+            if (Array.IndexOf(takenCourses, code) != -1) MessageBox.Show("this course is already taken");
+            else
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string queryString = "INSERT into Student_Course  VALUES (@studentid,@courseid,@status,@grade)";
+
+                    using (SqlCommand cmd_takecourse = new SqlCommand(queryString))
+                    {
+                        cmd_takecourse.Connection = con;
+                        cmd_takecourse.Parameters.AddWithValue("@studentid", Student_id);
+                        cmd_takecourse.Parameters.AddWithValue("@courseid", code);
+                        cmd_takecourse.Parameters.AddWithValue("@status", "?");
+                        cmd_takecourse.Parameters.AddWithValue("@grade", "?");
+                        con.Open();
+                        cmd_takecourse.ExecuteNonQuery();
+
+                    }
+                }
+
+                Load_student_Courses();
+                MessageBox.Show("the course is taken successfully !!");
+            }
+        }
+
+        private void btn_Drop_Click_1(object sender, EventArgs e)
+        {
+            var code = dgv_TakenCourse.SelectedRows[0].Cells[0].Value.ToString();
+            MessageBox.Show(code);
+            if (Array.IndexOf(takenCourses, code) != -1)
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string query_dropCourse = "delete from Student_Course  where studentid= @studentid and courseid= @courseid";
+
+                    using (SqlCommand cmd = new SqlCommand(query_dropCourse))
+                    {
+                        cmd.Connection = con;
+                        cmd.Parameters.AddWithValue("@studentid", Student_id);
+                        cmd.Parameters.AddWithValue("@courseid", code);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+
+                    }
+                }
+
+                Load_student_Courses();
+                MessageBox.Show("the course is dropped !!");
+            }
+            else MessageBox.Show("please select a course to drop");
+            
 
         }
     }
