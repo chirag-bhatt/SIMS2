@@ -90,6 +90,7 @@ namespace SIMS2
         private void btn_SelectInstructor_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(cmb_SearchInstructor.Text);
+           // MessageBox.Show(id.ToString());
             ViewInstructorInfo vIIForm = new ViewInstructorInfo(id);
             vIIForm.ShowDialog();
         }

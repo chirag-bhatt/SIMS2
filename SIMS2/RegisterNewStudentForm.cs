@@ -50,12 +50,11 @@ namespace SIMS2
 
             }
 
-
         }
         private void cmb_Department_SelectedIndexChanged(object sender, EventArgs e)
         {// to load the courses for the selected department
 
-            lv_courses.Items.Clear();
+          //  lv_courses.Items.Clear();
             String dept_id = Convert.ToString(cmb_Department.SelectedValue) ;
            // MessageBox.Show(dept_id);
            
@@ -83,7 +82,7 @@ namespace SIMS2
                 lvItem.SubItems.Add(dataRow[1].ToString());
                 lvItem.SubItems.Add(dataRow[2].ToString());
 
-                lv_courses.Items.Add(lvItem);
+              //  lv_courses.Items.Add(lvItem);
 
             }
             con.Close();

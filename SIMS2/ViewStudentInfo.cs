@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SIMS2
 {
     public partial class ViewStudentInfo : Form
@@ -19,6 +20,7 @@ namespace SIMS2
         String departmentId;
         String [] takenCourses;
         int Student_id;
+        int Maxcredit = 20;
         public ViewStudentInfo()
         {
             InitializeComponent();
@@ -157,7 +159,8 @@ namespace SIMS2
         }
         private void Load_student_Courses()
         {
-
+           // lbl_MaxCredit.Text = Maxcredit.ToString();
+            
             dgv_TakenCourse.Rows.Clear();
             GV_CoursesData.Rows.Clear();
             // query for the student's Courses and add them to the datagridview Course_details
@@ -248,59 +251,76 @@ namespace SIMS2
 
         private void btn_take_Click_1(object sender, EventArgs e)
         {
-            
-            var code = dgv_AvailbleCourses.SelectedRows[0].Cells[0].Value.ToString();
-            MessageBox.Show(code);
-            if (Array.IndexOf(takenCourses, code) != -1) MessageBox.Show("this course is already taken");
-            else
+            try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
+                var code = dgv_AvailbleCourses.SelectedRows[0].Cells[0].Value.ToString();
+                MessageBox.Show(code);
+                if (Array.IndexOf(takenCourses, code) != -1) MessageBox.Show("this course is already taken");
+                else
                 {
-                    string queryString = "INSERT into Student_Course  VALUES (@studentid,@courseid,@status,@grade)";
-
-                    using (SqlCommand cmd_takecourse = new SqlCommand(queryString))
+                    using (SqlConnection con = new SqlConnection(connectionString))
                     {
-                        cmd_takecourse.Connection = con;
-                        cmd_takecourse.Parameters.AddWithValue("@studentid", Student_id);
-                        cmd_takecourse.Parameters.AddWithValue("@courseid", code);
-                        cmd_takecourse.Parameters.AddWithValue("@status", "?");
-                        cmd_takecourse.Parameters.AddWithValue("@grade", "?");
-                        con.Open();
-                        cmd_takecourse.ExecuteNonQuery();
+                        string queryString = "INSERT into Student_Course  VALUES (@studentid,@courseid,@status,@grade)";
 
+                        using (SqlCommand cmd_takecourse = new SqlCommand(queryString))
+                        {
+                            cmd_takecourse.Connection = con;
+                            cmd_takecourse.Parameters.AddWithValue("@studentid", Student_id);
+                            cmd_takecourse.Parameters.AddWithValue("@courseid", code);
+                            cmd_takecourse.Parameters.AddWithValue("@status", "?");
+                            cmd_takecourse.Parameters.AddWithValue("@grade", "?");
+                            con.Open();
+                            cmd_takecourse.ExecuteNonQuery();
+
+                        }
                     }
-                }
 
-                Load_student_Courses();
-                MessageBox.Show("the course is taken successfully !!");
+                    Load_student_Courses();
+                    MessageBox.Show("the course is taken successfully !!");
+                }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("choose a course ");
+            }
+ 
         }
 
         private void btn_Drop_Click_1(object sender, EventArgs e)
         {
-            var code = dgv_TakenCourse.SelectedRows[0].Cells[0].Value.ToString();
-            MessageBox.Show(code);
-            if (Array.IndexOf(takenCourses, code) != -1)
+            try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
+                var code = dgv_TakenCourse.SelectedRows[0].Cells[0].Value.ToString();
+                MessageBox.Show(code);
+                if (Array.IndexOf(takenCourses, code) != -1)
                 {
-                    string query_dropCourse = "delete from Student_Course  where studentid= @studentid and courseid= @courseid";
-
-                    using (SqlCommand cmd = new SqlCommand(query_dropCourse))
+                    using (SqlConnection con = new SqlConnection(connectionString))
                     {
-                        cmd.Connection = con;
-                        cmd.Parameters.AddWithValue("@studentid", Student_id);
-                        cmd.Parameters.AddWithValue("@courseid", code);
-                        con.Open();
-                        cmd.ExecuteNonQuery();
+                        string query_dropCourse = "delete from Student_Course  where studentid= @studentid and courseid= @courseid";
 
+                        using (SqlCommand cmd = new SqlCommand(query_dropCourse))
+                        {
+                            cmd.Connection = con;
+                            cmd.Parameters.AddWithValue("@studentid", Student_id);
+                            cmd.Parameters.AddWithValue("@courseid", code);
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+
+                        }
                     }
-                }
 
-                Load_student_Courses();
-                MessageBox.Show("the course is dropped !!");
+                    Load_student_Courses();
+                    MessageBox.Show("the course is dropped !!");
+                }
+                else MessageBox.Show("please select a course to drop");
             }
-            else MessageBox.Show("please select a course to drop");
+            catch (Exception)
+            {
+
+                MessageBox.Show("select a course to drop");
+            }
+            
             
 
         }
