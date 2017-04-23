@@ -42,6 +42,7 @@ namespace SIMS2
         private void btn_RegisterNewStudent_Click(object sender, EventArgs e)
         {
             new RegisterNewStudentForm().ShowDialog();
+            Staff_Form_Load(null, null);
         }
 
         private void Staff_Form_Load(object sender, EventArgs e)
@@ -53,7 +54,7 @@ namespace SIMS2
 
             // to fill the cmb_SearchStudent wiht students ids
             using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("select studentId from student", connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select studentId,fname,lname from student", connection))
             {
 
                 DataTable datatable = new DataTable();
@@ -82,8 +83,11 @@ namespace SIMS2
         private void btn_SelectStu_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(cmb_SearchStudent.Text);
-            ViewStudentInfo vsfForm = new ViewStudentInfo(id);
+            ViewStudentInfo vsfForm = new ViewStudentInfo(id,"staff");
             vsfForm.ShowDialog();
+            Staff_Form_Load(null, null);
+
+
 
         }
 
@@ -93,11 +97,13 @@ namespace SIMS2
            // MessageBox.Show(id.ToString());
             ViewInstructorInfo vIIForm = new ViewInstructorInfo(id);
             vIIForm.ShowDialog();
+           
         }
 
         private void btn_RegisterNewInstructor_Click(object sender, EventArgs e)
         {
             new AddNewInstructor().ShowDialog();
+            Staff_Form_Load(null, null);
         }
     }
 }

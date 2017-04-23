@@ -26,7 +26,7 @@ namespace SIMS2
             InitializeComponent();
         }
 
-        public ViewStudentInfo(int Student_id)
+        public ViewStudentInfo(int Student_id,String logintype)
         {
             InitializeComponent();
             this.Student_id = Student_id;
@@ -59,19 +59,28 @@ namespace SIMS2
 
             }
             // to retreive the department of the student
-            using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("select d.dname , d.deptid from student_dept sd , department d where sd.deptid=d.deptid and studentId =" + Student_id, connection))
+            try
             {
+                using (connection = new SqlConnection(connectionString))
+                using (SqlDataAdapter adapter = new SqlDataAdapter("select d.dname , d.deptid from student_dept sd , department d where sd.deptid=d.deptid and studentId =" + Student_id, connection))
+                {
 
-                DataTable datatable = new DataTable();
-                adapter.Fill(datatable);
-                DataRow dataRow = datatable.Rows[0];
+                    DataTable datatable = new DataTable();
+                    adapter.Fill(datatable);
+                    DataRow dataRow = datatable.Rows[0];
 
-                lbl_Department.Text = dataRow[0].ToString();
-                departmentId = dataRow[1].ToString();
-                MessageBox.Show(departmentId);
+                    lbl_Department.Text = dataRow[0].ToString();
+                    departmentId = dataRow[1].ToString();
+                    //MessageBox.Show(departmentId);
 
+                }
             }
+            catch (Exception)
+            {
+                departmentId = "4";
+                lbl_Department.Text = "Software Engineering";
+            }
+            
 
             // query for the student's Courses and add them to the datagridview Course_details
             using (connection = new SqlConnection(connectionString))
@@ -323,6 +332,78 @@ namespace SIMS2
             
             
 
+        }
+
+        private void btn_chagneConfirmation_Click(object sender, EventArgs e)
+        {
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from student where studentId =" + Student_id, connection))
+            {
+
+                DataTable datatable = new DataTable();
+                adapter.Fill(datatable);
+                DataRow dataRow = datatable.Rows[0];
+                if (textBox1.Text == dataRow[13].ToString())
+                {
+                    //change the password 
+                    if (textBox2.Text == textBox3.Text)
+                    {
+                        using (SqlConnection con = new SqlConnection(connectionString))
+                        {
+                            string query_updatePass = "UPDATE student SET password = @newpassword WHERE studentid= @studentid ;";
+
+                            using (SqlCommand cmd = new SqlCommand(query_updatePass))
+                            {
+                                cmd.Connection = con;
+                                string newpassword = textBox2.Text;
+                                cmd.Parameters.AddWithValue("@studentid", Student_id);
+                                cmd.Parameters.AddWithValue("@newpassword", newpassword);
+                                con.Open();
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("passwword updated succesfully");
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("passwords dont match");
+                    }
+                }
+                else
+                {
+                    //password is incorrect
+                    MessageBox.Show("incorrect password,please try again");
+
+                }
+
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+           DialogResult dr= MessageBox.Show( "Please Confirm the Deletion !!", "Confirm", MessageBoxButtons.YesNo);
+               
+            if (dr.ToString()=="Yes")
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string query_updatePass = "delete from student  WHERE studentid= @studentid ;";
+
+                    using (SqlCommand cmd = new SqlCommand(query_updatePass))
+                    {
+                        cmd.Connection = con;
+                        string newpassword = textBox2.Text;
+                        cmd.Parameters.AddWithValue("@studentid", Student_id);
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+      
+                    }
+                }
+                this.Dispose();
+            }
+            
         }
     }
 }

@@ -36,7 +36,7 @@ namespace SIMS2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace SIMS2
                 cmb_Faculty.ValueMember = "dname";
 
             }
-            
+
 
 
         }
@@ -91,15 +91,26 @@ namespace SIMS2
 
             string fname = textBox3.Text;
             string lname = textBox2.Text;
-            string gender = comboBox1.SelectedText;
-            string nationality = comboBox2.SelectedText;
+            string gender = comboBox1.SelectedItem.ToString();
+            string nationality = comboBox2.SelectedItem.ToString();
             int nationalId = Convert.ToInt32(tb_NationalId.Text);
             string email = tb_Email.Text;
             string phonenum = tb_PhoneNumber.Text;
+            Random rnd = new Random();
+            var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[10];
+            var random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = letters[random.Next(letters.Length)];
+            }
+
+            string password = new String(stringChars);
             try
             {
                 // fixed the insert by removing the id column
-                SqlCommand command1 = new SqlCommand("INSERT INTO inst VALUES( 'john', 'smith', 'male', 'american', 111111111, 'john@gmail.com', 222222222)", con);
+                SqlCommand command1 = new SqlCommand("INSERT INTO inst VALUES( @fname,@lname,@gender,@nationality,@nationalId, @email,@phonenum,@password)", con);
 
                 command1.Parameters.AddWithValue("@fname", fname);
                 command1.Parameters.AddWithValue("@lname", lname);
@@ -108,9 +119,12 @@ namespace SIMS2
                 command1.Parameters.AddWithValue("@nationalId", nationalId);
                 command1.Parameters.AddWithValue("@email", email);
                 command1.Parameters.AddWithValue("@phonenum", phonenum);
+                command1.Parameters.AddWithValue("@password", password);
                 command1.ExecuteNonQuery();
-                MessageBox.Show("Row inserted !! ");
-                //con.Close();
+                MessageBox.Show("Registered !! the password : "+password);
+
+                con.Close();
+                this.Dispose();
             }
             catch (Exception ex)
             {
@@ -128,19 +142,19 @@ namespace SIMS2
             using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
             {
 
-                    try
-                    {
-                        DataTable datatable = new DataTable();
-                        adapter.Fill(datatable);
-                        comboBox3.DataSource = datatable;
-                        comboBox3.DisplayMember = "cname";
-                        comboBox3.ValueMember = "cname";
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
-                   
+                try
+                {
+                    DataTable datatable = new DataTable();
+                    adapter.Fill(datatable);
+                    comboBox3.DataSource = datatable;
+                    comboBox3.DisplayMember = "cname";
+                    comboBox3.ValueMember = "cname";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
 
             }
 

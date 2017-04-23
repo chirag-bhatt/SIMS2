@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -24,15 +24,15 @@ namespace SIMS2
         SqlCommandBuilder cb;
         DataSet ds;
         DataTable dt;
-    
+
         public RegisterNewStudentForm()
         {
             InitializeComponent();
-        //    lv_courses.CheckBoxes = true;
-          //  load_data(); // look like we find eaiser way to do this 
+            //    lv_courses.CheckBoxes = true;
+            //  load_data(); // look like we find eaiser way to do this 
         }
 
-        private void load_data() 
+        private void load_data()
         { // to load the departments names  into the cmb_departments
             using (con = new SqlConnection(connectionString))
             using (SqlDataAdapter adapter = new SqlDataAdapter("select * from department", con))
@@ -40,40 +40,41 @@ namespace SIMS2
 
                 DataTable datatable = new DataTable();
                 adapter.Fill(datatable);
-                for(int i = 0; i < datatable.Rows.Count; i++)
+                for (int i = 0; i < datatable.Rows.Count; i++)
                 {
                     DataRow dataRow = datatable.Rows[i];
                     cmb_Department.Items.Add(dataRow[1].ToString());
-                    
+
 
                 }
 
             }
+
 
         }
         private void cmb_Department_SelectedIndexChanged(object sender, EventArgs e)
         {// to load the courses for the selected department
 
           //  lv_courses.Items.Clear();
-            String dept_id = Convert.ToString(cmb_Department.SelectedValue) ;
-           // MessageBox.Show(dept_id);
-           
-              String query = "select courseId, cname, credits from course where courseId in( select courseId from Dept_course where deptId== @id)";
-            
+            String dept_id = Convert.ToString(cmb_Department.SelectedValue);
+            // MessageBox.Show(dept_id);
 
-                DataTable datatable = new DataTable();
-               // MySqlConnection conn = new MySqlConnection(@"connection string");//tested and working
-                con = new SqlConnection(connectionString);
-                con.Open();
+            String query = "select courseId, cname, credits from course where courseId in( select courseId from Dept_course where deptId== @id)";
 
-                SqlCommand cmd = new SqlCommand( "select courseId, cname, credits from course where courseId in( select courseId from Dept_course where deptId = @id)");
-                 cmd.Parameters.AddWithValue("@id", dept_id);
-                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                cmd.Connection = con;
-                adapter.SelectCommand = cmd;
-                adapter.Fill(datatable);
-               
- 
+
+            DataTable datatable = new DataTable();
+            // MySqlConnection conn = new MySqlConnection(@"connection string");//tested and working
+            con = new SqlConnection(connectionString);
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("select courseId, cname, credits from course where courseId in( select courseId from Dept_course where deptId = @id)");
+            cmd.Parameters.AddWithValue("@id", dept_id);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            cmd.Connection = con;
+            adapter.SelectCommand = cmd;
+            adapter.Fill(datatable);
+
+
             for (int i = 0; i < datatable.Rows.Count; i++)
             {
                 DataRow dataRow = datatable.Rows[i];
@@ -91,10 +92,12 @@ namespace SIMS2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
             con = new SqlConnection(connectionString);
             adp = new SqlDataAdapter();
             ds = new DataSet();
-
+            
             con.Open();
             string fname = textBox3.Text;
             string lname = textBox2.Text;
@@ -110,20 +113,25 @@ namespace SIMS2
             string adress = textBox1.Text;
             string email = tb_Email.Text;
             string phonenum = tb_PhoneNumber.Text;
-            //"INSERT INTO student VALUES (123456,'1','2','3','11/2/1997','male','1/1/2010','Egyptian',12345678910,'A00000000','istanbul-goztepe','A@b.com','+9659789519');
-            //adp.InsertCommand = new SqlCommand("INSERT INTO student VALUES (123456,fname,lname,fathername,bday,gender,registerationDate,nationality,nationalId,passport,adress,email,phonenum);", con);
-            try
+            Random rnd = new Random();
+            var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[10];
+            var random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
             {
-                
+                stringChars[i] = letters[random.Next(letters.Length)];
+            }
 
-                SqlCommand command1 = new SqlCommand("INSERT INTO student VALUES (@fname,@lname,@fathername,'1/1/2010',@gender,@registerationDate,@nationality,@nationalId,@passport,@adress,@email,@phonenum);", con);
+            string password = new String(stringChars);
 
-                //@fname,@lname,@fathername,@bday,@gender,@registerationDate,@nationality,@nationalId,@passport,@adress,@email,@phonenum
-
+            
+                SqlCommand command1 = new SqlCommand("INSERT INTO student VALUES (@fname,@lname,@fathername,@bday,@gender,@registerationDate,@nationality,@nationalId,@passport,@adress,@email,@phonenum,@password);", con);
+                //DateTime.Parse(bday)
                 command1.Parameters.AddWithValue("@fname", fname);
                 command1.Parameters.AddWithValue("@lname", lname);
-                command1.Parameters.AddWithValue("@fathername",fathername);
-                command1.Parameters.AddWithValue("@bday", bday);
+                command1.Parameters.AddWithValue("@fathername", fathername);
+                command1.Parameters.AddWithValue("@bday", DateTime.Parse(bday));
                 command1.Parameters.AddWithValue("@gender", gender);
                 command1.Parameters.AddWithValue("@registerationDate", registerationDate);
                 command1.Parameters.AddWithValue("@nationality", nationality);
@@ -132,25 +140,25 @@ namespace SIMS2
                 command1.Parameters.AddWithValue("@adress", adress);
                 command1.Parameters.AddWithValue("@email", email);
                 command1.Parameters.AddWithValue("@phonenum", phonenum);
-
-                //adp.InsertCommand = command1;
+                command1.Parameters.AddWithValue("@password", password);
                 command1.ExecuteNonQuery();
-               // adp.InsertCommand.ExecuteNonQuery();
-                 MessageBox.Show("Row inserted !! ");
+
+
+            //    MessageBox.Show("Row inserted !! ");
                 adp.SelectCommand = new SqlCommand("select * from student", con);
                 adp.Fill(ds, "myData");
                 dt = ds.Tables["myData"];
-                // dr = dt.Rows[0];
                 dg.DataSource = ds.Tables["mydata"];
                 con.Close();
+                MessageBox.Show("Regestiration is done !!, The password is:" + password);
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Registeration faild !!,please check your input ");
 
             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.ToString());
-             }
 
-            //adp.InsertCommand = new SqlCommand("INSERT INTO student VALUES (1502581,'1','2','3','11/2/1997','male','1/1/2010','Egyptian',12345678910,'A00000000','istanbul-goztepe','A@b.com','+9659789519');", con);
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -185,7 +193,7 @@ namespace SIMS2
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
@@ -201,7 +209,7 @@ namespace SIMS2
         private void RegisterNewStudentForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'database1DataSet1.department' table. You can move, or remove it, as needed.
-         //   this.departmentTableAdapter.Fill(this.database1DataSet1.department);
+            //   this.departmentTableAdapter.Fill(this.database1DataSet1.department);
             // TODO: This line of code loads data into the 'database1DataSet.department' table. You can move, or remove it, as needed.
             this.departmentTableAdapter.Fill(this.database1DataSet.department);
         }
