@@ -83,9 +83,11 @@ namespace SIMS2
         private void btn_SelectStu_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(cmb_SearchStudent.Text);
-            ViewStudentInfo vsfForm = new ViewStudentInfo(id);
+            ViewStudentInfo vsfForm = new ViewStudentInfo(id,"staff");
             vsfForm.ShowDialog();
             Staff_Form_Load(null, null);
+
+
 
         }
 

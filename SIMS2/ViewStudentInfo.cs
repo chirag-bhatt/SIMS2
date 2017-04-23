@@ -26,7 +26,7 @@ namespace SIMS2
             InitializeComponent();
         }
 
-        public ViewStudentInfo(int Student_id)
+        public ViewStudentInfo(int Student_id,String logintype)
         {
             InitializeComponent();
             this.Student_id = Student_id;

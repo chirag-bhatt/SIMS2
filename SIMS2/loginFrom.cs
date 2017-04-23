@@ -95,7 +95,7 @@ namespace SIMS2
 
                         this.Hide();
                         int id = Convert.ToInt32(Id);
-                        ViewStudentInfo vsfForm = new ViewStudentInfo(id);
+                        ViewStudentInfo vsfForm = new ViewStudentInfo(id,"student");
                         vsfForm.ShowDialog();
                         auth_flag = 1;
                         break;
