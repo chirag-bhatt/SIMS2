@@ -42,6 +42,7 @@ namespace SIMS2
         private void btn_RegisterNewStudent_Click(object sender, EventArgs e)
         {
             new RegisterNewStudentForm().ShowDialog();
+            Staff_Form_Load(null, null);
         }
 
         private void Staff_Form_Load(object sender, EventArgs e)
@@ -84,6 +85,7 @@ namespace SIMS2
             int id = Convert.ToInt32(cmb_SearchStudent.Text);
             ViewStudentInfo vsfForm = new ViewStudentInfo(id);
             vsfForm.ShowDialog();
+       
 
         }
 
@@ -93,11 +95,13 @@ namespace SIMS2
            // MessageBox.Show(id.ToString());
             ViewInstructorInfo vIIForm = new ViewInstructorInfo(id);
             vIIForm.ShowDialog();
+           
         }
 
         private void btn_RegisterNewInstructor_Click(object sender, EventArgs e)
         {
             new AddNewInstructor().ShowDialog();
+            Staff_Form_Load(null, null);
         }
     }
 }

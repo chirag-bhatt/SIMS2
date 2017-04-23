@@ -69,7 +69,7 @@ namespace SIMS2
 
                 lbl_Department.Text = dataRow[0].ToString();
                 departmentId = dataRow[1].ToString();
-                MessageBox.Show(departmentId);
+                //MessageBox.Show(departmentId);
 
             }
 
@@ -323,6 +323,52 @@ namespace SIMS2
             
             
 
+        }
+
+        private void btn_chagneConfirmation_Click(object sender, EventArgs e)
+        {
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select * from student where studentId =" + Student_id, connection))
+            {
+
+                DataTable datatable = new DataTable();
+                adapter.Fill(datatable);
+                DataRow dataRow = datatable.Rows[0];
+                if (textBox1.Text == dataRow[13].ToString())
+                {
+                    //change the password 
+                    if (textBox2.Text == textBox3.Text)
+                    {
+                        using (SqlConnection con = new SqlConnection(connectionString))
+                        {
+                            string query_updatePass = "UPDATE student SET password = @newpassword WHERE studentid= @studentid ;";
+
+                            using (SqlCommand cmd = new SqlCommand(query_updatePass))
+                            {
+                                cmd.Connection = con;
+                                string newpassword = textBox2.Text;
+                                cmd.Parameters.AddWithValue("@studentid", Student_id);
+                                cmd.Parameters.AddWithValue("@newpassword", newpassword);
+                                con.Open();
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("passwword updated succesfully");
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("passwords dont match");
+                    }
+                }
+                else
+                {
+                    //password is incorrect
+                    MessageBox.Show("incorrect password,please try again");
+
+                }
+
+            }
         }
     }
 }

@@ -88,6 +88,14 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_CourseTaking = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.lbl_TotalCredit = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lbl_AvailbleCreidt = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.lbl_MaxCredit = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.dgv_AvailbleCourses = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,14 +109,6 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.lbl_TotalCredit = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.lbl_AvailbleCreidt = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.lbl_MaxCredit = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.info_tab.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -120,9 +120,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.GV_CoursesData)).BeginInit();
             this.tab_CourseTaking.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AvailbleCourses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TakenCourse)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -146,7 +146,7 @@
             this.info_tab.Location = new System.Drawing.Point(4, 22);
             this.info_tab.Name = "info_tab";
             this.info_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.info_tab.Size = new System.Drawing.Size(788, 431);
+            this.info_tab.Size = new System.Drawing.Size(853, 431);
             this.info_tab.TabIndex = 0;
             this.info_tab.Text = "Info";
             this.info_tab.UseVisualStyleBackColor = true;
@@ -175,6 +175,7 @@
             this.btn_chagneConfirmation.TabIndex = 6;
             this.btn_chagneConfirmation.Text = "Change";
             this.btn_chagneConfirmation.UseVisualStyleBackColor = true;
+            this.btn_chagneConfirmation.Click += new System.EventHandler(this.btn_chagneConfirmation_Click);
             // 
             // textBox3
             // 
@@ -528,7 +529,7 @@
             this.Academic_tab.Location = new System.Drawing.Point(4, 22);
             this.Academic_tab.Name = "Academic_tab";
             this.Academic_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Academic_tab.Size = new System.Drawing.Size(788, 431);
+            this.Academic_tab.Size = new System.Drawing.Size(853, 431);
             this.Academic_tab.TabIndex = 1;
             this.Academic_tab.Text = "Academic";
             this.Academic_tab.UseVisualStyleBackColor = true;
@@ -548,7 +549,7 @@
             this.tab_Courses.Location = new System.Drawing.Point(4, 22);
             this.tab_Courses.Name = "tab_Courses";
             this.tab_Courses.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Courses.Size = new System.Drawing.Size(788, 431);
+            this.tab_Courses.Size = new System.Drawing.Size(853, 431);
             this.tab_Courses.TabIndex = 2;
             this.tab_Courses.Text = "Courses";
             this.tab_Courses.UseVisualStyleBackColor = true;
@@ -659,6 +660,82 @@
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Course Taking";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.lbl_TotalCredit);
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.lbl_AvailbleCreidt);
+            this.panel1.Controls.Add(this.label23);
+            this.panel1.Controls.Add(this.lbl_MaxCredit);
+            this.panel1.Location = new System.Drawing.Point(659, 68);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(271, 129);
+            this.panel1.TabIndex = 28;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(3, 17);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(67, 13);
+            this.label19.TabIndex = 18;
+            this.label19.Text = "Total Credit :";
+            // 
+            // lbl_TotalCredit
+            // 
+            this.lbl_TotalCredit.AutoSize = true;
+            this.lbl_TotalCredit.Location = new System.Drawing.Point(95, 17);
+            this.lbl_TotalCredit.Name = "lbl_TotalCredit";
+            this.lbl_TotalCredit.Size = new System.Drawing.Size(167, 13);
+            this.lbl_TotalCredit.TabIndex = 19;
+            this.lbl_TotalCredit.Text = "Display number of total credit here";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(3, 45);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(80, 13);
+            this.label22.TabIndex = 21;
+            this.label22.Text = "Availble Credit :";
+            // 
+            // lbl_AvailbleCreidt
+            // 
+            this.lbl_AvailbleCreidt.AutoSize = true;
+            this.lbl_AvailbleCreidt.Location = new System.Drawing.Point(97, 45);
+            this.lbl_AvailbleCreidt.Name = "lbl_AvailbleCreidt";
+            this.lbl_AvailbleCreidt.Size = new System.Drawing.Size(107, 13);
+            this.lbl_AvailbleCreidt.TabIndex = 24;
+            this.lbl_AvailbleCreidt.Text = "display av credit here";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(3, 75);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(85, 13);
+            this.label23.TabIndex = 22;
+            this.label23.Text = "Maximun Credit :";
+            // 
+            // lbl_MaxCredit
+            // 
+            this.lbl_MaxCredit.AutoSize = true;
+            this.lbl_MaxCredit.Location = new System.Drawing.Point(97, 75);
+            this.lbl_MaxCredit.Name = "lbl_MaxCredit";
+            this.lbl_MaxCredit.Size = new System.Drawing.Size(120, 13);
+            this.lbl_MaxCredit.TabIndex = 23;
+            this.lbl_MaxCredit.Text = "display Maximun Credit :";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(5, 26);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(85, 13);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "Taken Courses :";
             // 
             // dgv_AvailbleCourses
             // 
@@ -828,82 +905,6 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(5, 26);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(85, 13);
-            this.label16.TabIndex = 12;
-            this.label16.Text = "Taken Courses :";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.lbl_TotalCredit);
-            this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.lbl_AvailbleCreidt);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.lbl_MaxCredit);
-            this.panel1.Location = new System.Drawing.Point(659, 68);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(271, 129);
-            this.panel1.TabIndex = 28;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(3, 17);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(67, 13);
-            this.label19.TabIndex = 18;
-            this.label19.Text = "Total Credit :";
-            // 
-            // lbl_TotalCredit
-            // 
-            this.lbl_TotalCredit.AutoSize = true;
-            this.lbl_TotalCredit.Location = new System.Drawing.Point(95, 17);
-            this.lbl_TotalCredit.Name = "lbl_TotalCredit";
-            this.lbl_TotalCredit.Size = new System.Drawing.Size(167, 13);
-            this.lbl_TotalCredit.TabIndex = 19;
-            this.lbl_TotalCredit.Text = "Display number of total credit here";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(3, 45);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(80, 13);
-            this.label22.TabIndex = 21;
-            this.label22.Text = "Availble Credit :";
-            // 
-            // lbl_AvailbleCreidt
-            // 
-            this.lbl_AvailbleCreidt.AutoSize = true;
-            this.lbl_AvailbleCreidt.Location = new System.Drawing.Point(97, 45);
-            this.lbl_AvailbleCreidt.Name = "lbl_AvailbleCreidt";
-            this.lbl_AvailbleCreidt.Size = new System.Drawing.Size(107, 13);
-            this.lbl_AvailbleCreidt.TabIndex = 24;
-            this.lbl_AvailbleCreidt.Text = "display av credit here";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(3, 75);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(85, 13);
-            this.label23.TabIndex = 22;
-            this.label23.Text = "Maximun Credit :";
-            // 
-            // lbl_MaxCredit
-            // 
-            this.lbl_MaxCredit.AutoSize = true;
-            this.lbl_MaxCredit.Location = new System.Drawing.Point(97, 75);
-            this.lbl_MaxCredit.Name = "lbl_MaxCredit";
-            this.lbl_MaxCredit.Size = new System.Drawing.Size(120, 13);
-            this.lbl_MaxCredit.TabIndex = 23;
-            this.lbl_MaxCredit.Text = "display Maximun Credit :";
-            // 
             // ViewStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -929,10 +930,10 @@
             this.tab_CourseTaking.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_AvailbleCourses)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_TakenCourse)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AvailbleCourses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TakenCourse)).EndInit();
             this.ResumeLayout(false);
 
         }

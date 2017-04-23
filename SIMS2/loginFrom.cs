@@ -18,8 +18,8 @@ namespace SIMS2
     public partial class loginFrom : Form
     {
         SqlConnection connection;
-        String connectionString=ConfigurationManager.ConnectionStrings["SIMS2.Properties.Settings.Database1_ConnectionString"].ConnectionString;
-         
+        String connectionString = ConfigurationManager.ConnectionStrings["SIMS2.Properties.Settings.Database1_ConnectionString"].ConnectionString;
+
         private String user = "user";
         private String pass = "1234";
 
@@ -34,13 +34,13 @@ namespace SIMS2
         public loginFrom()
         {
             InitializeComponent();
-            
+
             loadDataGrid();
 
 
         }
-      
-      
+
+
 
         private void loginFrom_Load(object sender, EventArgs e)
         {
@@ -60,7 +60,7 @@ namespace SIMS2
                 listBox1.DataSource = datatable;
 
               */
-      
+
 
             }
         }
@@ -73,13 +73,75 @@ namespace SIMS2
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["SIMS2.Properties.Settings.Database1_ConnectionString"].ConnectionString);
             adp = new SqlDataAdapter();
             ds = new DataSet();
-            if(cmb_loginType.SelectedIndex == 0)
+            if (cmb_loginType.SelectedIndex == 1)
             {
                 //student
+                adp.SelectCommand = new SqlCommand("select studentId, password from Student", con);
+                adp.Fill(ds, "myData");
+                dt = ds.Tables["myData"];
+                // dr = dt.Rows[0];
+                dg.DataSource = ds.Tables["mydata"];
+
+                int auth_flag = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    string password = dr["password"].ToString();
+                    string Id = dr["studentId"].ToString();
+                    //removing spaces so the if condition works 
+                    password = password.Replace(" ", String.Empty);
+                    Id = Id.Replace(" ", String.Empty);
+                    if (Id == tb_username.Text && tb_password.Text == password)
+                    {
+
+                        this.Hide();
+                        int id = Convert.ToInt32(Id);
+                        ViewStudentInfo vsfForm = new ViewStudentInfo(id);
+                        vsfForm.ShowDialog();
+                        auth_flag = 1;
+                        break;
+                    }
+
+                }
+                if (auth_flag == 0)
+                {
+                    MessageBox.Show("please try again", "login failed", MessageBoxButtons.OK);
+                }
+
             }
-            else if (cmb_loginType.SelectedIndex == 1)
+            else if (cmb_loginType.SelectedIndex == 0)
             {
                 //Instructor
+                adp.SelectCommand = new SqlCommand("select instId,password from inst", con);
+                adp.Fill(ds, "myData");
+                dt = ds.Tables["myData"];
+                // dr = dt.Rows[0];
+                dg.DataSource = ds.Tables["mydata"];
+
+                int auth_flag = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    string password = dr["password"].ToString();
+                    string Id = dr["instId"].ToString();
+                    //removing spaces so the if condition works 
+                    password = password.Replace(" ", String.Empty);
+                    Id = Id.Replace(" ", String.Empty);
+                    if (Id == tb_username.Text && tb_password.Text == password)
+                    {
+
+                        this.Hide();
+                        int id = Convert.ToInt32(Id);
+                        id = Convert.ToInt32(Id);
+                        ViewInstructorInfo vIIForm = new ViewInstructorInfo(id);
+                        vIIForm.ShowDialog();
+                        auth_flag = 1;
+                        break;
+                    }
+
+                }
+                if (auth_flag == 0)
+                {
+                    MessageBox.Show("please try again", "login failed", MessageBoxButtons.OK);
+                }
             }
             else if (cmb_loginType.SelectedIndex == 2)
             {
@@ -117,26 +179,25 @@ namespace SIMS2
             con.Close();
         }
         private void loadDataGrid()
-        { // a mathod to fill the datagrid with data
+        {
             using (connection = new SqlConnection(connectionString))
             using (SqlDataAdapter adp = new SqlDataAdapter("select id, password from staff", connection))
             {
 
-                ds = new DataSet(); 
+                ds = new DataSet();
                 adp.Fill(ds, "myData");
                 dt = ds.Tables["myData"];
-                // dr = dt.Rows[0];
                 dg.DataSource = ds.Tables["mydata"];
                 connection.Close();
 
             }
-           
-            
+
+
 
         }
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
