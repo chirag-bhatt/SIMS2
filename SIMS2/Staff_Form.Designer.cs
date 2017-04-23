@@ -43,7 +43,6 @@
             this.btn_RegisterNewStudent = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btn_RegisterNewInstructor = new System.Windows.Forms.Button();
-         //   this.studentTableAdapter = new SIMS2.Database1DataSetTableAdapters.studentTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).BeginInit();
@@ -183,15 +182,11 @@
             this.btn_RegisterNewInstructor.UseVisualStyleBackColor = true;
             this.btn_RegisterNewInstructor.Click += new System.EventHandler(this.btn_RegisterNewInstructor_Click);
             // 
-            // studentTableAdapter
-            // 
-      //      this.studentTableAdapter.ClearBeforeFill = true;
-            // 
             // Staff_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(252, 395);
+            this.ClientSize = new System.Drawing.Size(238, 395);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);

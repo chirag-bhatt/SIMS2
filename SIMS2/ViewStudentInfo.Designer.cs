@@ -77,8 +77,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_address = new System.Windows.Forms.Label();
-            this.Academic_tab = new System.Windows.Forms.TabPage();
-            this.btn_showTranscript = new System.Windows.Forms.Button();
             this.tab_Courses = new System.Windows.Forms.TabPage();
             this.GV_CoursesData = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,13 +107,13 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_delete = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.info_tab.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.Academic_tab.SuspendLayout();
             this.tab_Courses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_CoursesData)).BeginInit();
             this.tab_CourseTaking.SuspendLayout();
@@ -128,7 +126,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.info_tab);
-            this.tabControl1.Controls.Add(this.Academic_tab);
             this.tabControl1.Controls.Add(this.tab_Courses);
             this.tabControl1.Controls.Add(this.tab_CourseTaking);
             this.tabControl1.Location = new System.Drawing.Point(12, 2);
@@ -139,6 +136,7 @@
             // 
             // info_tab
             // 
+            this.info_tab.Controls.Add(this.btn_delete);
             this.info_tab.Controls.Add(this.groupBox4);
             this.info_tab.Controls.Add(this.groupBox3);
             this.info_tab.Controls.Add(this.groupBox2);
@@ -523,26 +521,6 @@
             this.lbl_address.TabIndex = 29;
             this.lbl_address.Text = "Address";
             // 
-            // Academic_tab
-            // 
-            this.Academic_tab.Controls.Add(this.btn_showTranscript);
-            this.Academic_tab.Location = new System.Drawing.Point(4, 22);
-            this.Academic_tab.Name = "Academic_tab";
-            this.Academic_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Academic_tab.Size = new System.Drawing.Size(853, 431);
-            this.Academic_tab.TabIndex = 1;
-            this.Academic_tab.Text = "Academic";
-            this.Academic_tab.UseVisualStyleBackColor = true;
-            // 
-            // btn_showTranscript
-            // 
-            this.btn_showTranscript.Location = new System.Drawing.Point(40, 41);
-            this.btn_showTranscript.Name = "btn_showTranscript";
-            this.btn_showTranscript.Size = new System.Drawing.Size(138, 23);
-            this.btn_showTranscript.TabIndex = 0;
-            this.btn_showTranscript.Text = "Show Transcript";
-            this.btn_showTranscript.UseVisualStyleBackColor = true;
-            // 
             // tab_Courses
             // 
             this.tab_Courses.Controls.Add(this.GV_CoursesData);
@@ -905,11 +883,21 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(372, 376);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(238, 23);
+            this.btn_delete.TabIndex = 35;
+            this.btn_delete.Text = "Delete Student";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
             // ViewStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 518);
+            this.ClientSize = new System.Drawing.Size(878, 518);
             this.Controls.Add(this.tabControl1);
             this.Name = "ViewStudentInfo";
             this.Text = "ViewStudentInfo";
@@ -924,7 +912,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.Academic_tab.ResumeLayout(false);
             this.tab_Courses.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GV_CoursesData)).EndInit();
             this.tab_CourseTaking.ResumeLayout(false);
@@ -973,8 +960,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbl_address;
-        private System.Windows.Forms.TabPage Academic_tab;
-        private System.Windows.Forms.Button btn_showTranscript;
         private System.Windows.Forms.TabPage tab_Courses;
         private System.Windows.Forms.DataGridView GV_CoursesData;
         private System.Windows.Forms.TabPage tab_CourseTaking;
@@ -1012,5 +997,6 @@
         private System.Windows.Forms.Label lbl_AvailbleCreidt;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label lbl_MaxCredit;
+        private System.Windows.Forms.Button btn_delete;
     }
 }

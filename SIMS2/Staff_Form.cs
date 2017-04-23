@@ -54,7 +54,7 @@ namespace SIMS2
 
             // to fill the cmb_SearchStudent wiht students ids
             using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("select studentId from student", connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("select studentId,fname,lname from student", connection))
             {
 
                 DataTable datatable = new DataTable();
@@ -85,7 +85,7 @@ namespace SIMS2
             int id = Convert.ToInt32(cmb_SearchStudent.Text);
             ViewStudentInfo vsfForm = new ViewStudentInfo(id);
             vsfForm.ShowDialog();
-       
+            Staff_Form_Load(null, null);
 
         }
 
